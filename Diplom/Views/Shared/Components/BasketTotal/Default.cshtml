@@ -1,0 +1,23 @@
+﻿@model Diplom.Models.BasketModels.Basket
+
+@* виджет в навбаре для отображения информации о выбраном товаре *@
+
+
+<div class="mini-cart-control">
+    <div class="minicart-icon"><i class="icon icon-minicart">iconminicart</i></div>
+
+    <div class="minicart-items">
+        <a class="btn btn-link navbar-btn" asp-controller="Cart"
+           asp-action="Index" asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()">
+            
+            @if (Model.Items.Count() > 0)
+            {
+                <small class="navbar-text">
+                    @*<b>Your basket:</b>*@
+                    @Model.Items.Sum(x => x.Quantity) @*item(s)*@ =
+                    @Model.ComputeTotalValue().ToString() UAH
+                </small>
+             }
+        </a>
+    </div>
+</div>

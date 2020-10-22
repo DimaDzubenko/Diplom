@@ -1,0 +1,53 @@
+﻿@model Diplom.Models.ViewModels.Shop.Pentie.PBrandsListViewModel
+
+@{
+    ViewData["Title"] = "Penties brands";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>Id</th>*@
+            <th>Name</th>
+            <th>Image</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PBrands)
+        {
+            <tr>
+                @*<td>@item.PBrandId</td>*@
+                <td>@item.Name</td>
+                <td>
+                    @if (@item.Image != null)
+                    {
+                        <img src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Image))" alt="" class="img-responsive center-block" style="width: 200px">
+                    }
+                    else
+                    {
+                        <img src="~/images/product/product.jpg" alt="" class="img-responsive center-block">
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PBrandId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PBrandId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PBrandId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<page-link page-model="@Model.PageViewModel"
+           page-action="Index"
+           page-classes-enable="true"
+           page-class="btn"
+           page-class-normal="btn-default"
+           page-class-selected="btn-primary"
+           class="btn-group pull-right">
+</page-link>

@@ -1,0 +1,718 @@
+
+.engo-slide-container {
+    .tp-bullets {
+        z-index: 9;
+    }
+}
+.slider-04 .tparrows.preview3 {
+    display: none !important;
+}
+.tt_uppercase {
+    text-transform: uppercase;
+}
+.saleoff {
+    color: #fff;
+    text-transform: uppercase;
+}
+.number-sale-04 {
+    font: 900 206px/203px $font-Playfair;
+    color: #fff;
+    text-transform: uppercase;
+}
+.friday {
+    font-family: $font-family-base;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.low-prices {
+    font-family: $font-Playfair;
+    font-weight: 400;
+    color: #fff;
+}
+
+.child-swiper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+.swiper-product {
+    width: 800px;
+}
+
+
+.women-slider {
+    font-family:$font-Playfair;
+    color: #fff;
+    text-transform: uppercase;
+}
+.fashion {
+    font-family:$font-family-base;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.engo-banner-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 100px;
+    .engo-banner {
+        width: 100%;
+        position: relative;
+
+        .collection-slider {
+            font-family: $font-family-base;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 7px;
+        }
+        .shopnow {
+            width: 150px;
+            height: 40px;
+            display: block;
+            border-radius: 20px;
+            font:400 16px/40px $font-family-base;
+            color: $text-color;
+            background: #fff;
+            text-align: center;
+            @include transitbg(0.2s);
+            &:hover {
+                background: $main-color;
+                color: #fff;
+            }
+        }
+    }
+}
+@include bp(max-width,479px) {
+    .mb-z {
+        z-index: 6 !important;
+    }
+    .fixheightimg {
+        height: 80vh !important;
+        bottom: 0;
+        width: auto!important;
+        @include translate2d(-180px,-125px);
+    }
+    .women-slider {
+        font-size: 72px !important;
+        bottom: -62px;
+        position: absolute;
+    }
+    .collection-slider {
+        font-size: 22px !important;
+        position: absolute;
+        left:40px;
+        bottom: -40px;
+        @include translate2d(-40px,15px);
+    }
+    .fashion {
+        font-size: 16px !important;
+        @include translate2d(-8px,10px);
+        position: absolute;
+        top: 125px !important;
+        left:40px !important;
+        letter-spacing: 2px;
+    }
+    .fiximg-mb {
+        width: 60vw !important;
+        height: auto !important;
+        @include translate2d(0, -60px);
+    }
+    .friday {
+        font-size: 32px !important;
+        @include translate2d(-40px,0px);
+        position: absolute;
+        bottom: -60px !important;
+        left:40px !important;
+    }
+    .low-prices {
+        font-size: 18px !important;
+        @include translate2d(-40px,-20px);
+        position: absolute;
+        bottom: -90px !important;
+        left:40px !important;
+    }
+}
+@include bp(max-width,360px) {
+    .fixheightimg {
+        @include translate2d(-120px,-100px);
+    }
+    .women-slider {
+        @include translate2d(-20px,0);
+    }
+    .fashion {
+        font-size: 18px !important;
+        top: 90px !important;
+        left: 25px !important;
+        letter-spacing: 1px;
+    }
+    .collection-slider {
+        left:30px;
+    }
+    .friday {
+        font-size: 28px !important;
+        bottom: -45px !important;
+        left:30px !important;
+    }
+    .low-prices {
+        font-size: 15px !important;
+        bottom: -75px !important;
+    }
+    .fiximg-mb {
+        @include translate2d(-15px, -55px);
+    }
+}
+.slider-04 .tp-leftarrow.default,.slider-04 .tp-rightarrow.default {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+}
+@include bp(max-width,767px) {
+    .tp-bullets.preview3 {
+        bottom: 12px !important;
+    }
+    .engo-banner-container .engo-banner .shopnow {
+        display: none !important;
+    }
+    .engo-slider .shopnow {
+        display: none !important;
+    }
+}
+@include bp(max-width,639px) {
+    .slider-04 .tp-leftarrow.default, .slider-04 .tp-rightarrow.default {
+        display: none;
+    }
+}
+/* home 01 */
+/* fix ipad */
+@include bp(max-width,768px) {
+    @include bp(min-width,768px) {
+        .mb-z {
+            z-index: 6 !important;
+        }
+        .fixheightimg {
+            height: 80vh !important;
+            bottom: 0;
+            width: auto!important;
+            @include translate2d(-220px,-145px);
+        }
+        .women-slider {
+            font-size: 120px !important;
+            bottom: -60px;
+            position: absolute;
+        }
+        .collection-slider {
+            font-size: 40px !important;
+            position: absolute;
+            left: 55px;
+            bottom: 15px;
+            @include translate2d(-40px,30px);
+        }
+        .fashion {
+            @include translate2d(-40px,-30px);
+            font-size: 25px !important;
+            position: absolute;
+            top: 190px !important;
+            left: 111px !important;
+            letter-spacing: 2px;
+        }
+        .engo-banner-container .engo-banner .shopnow {
+            display: none !important;
+        }
+        .fiximg-mb {
+            width: 45vw !important;
+            height: auto !important;
+            @include translate2d(-30px, -60px);
+        }
+        .friday {
+            font-size: 45px !important;
+            @include translate2d(-40px,0);
+            position: absolute;
+            bottom: -80px !important;
+            left: 50px !important;
+        }
+        .low-prices {
+            font-size: 22px !important;
+            @include translate2d(-40px,0);
+            position: absolute;
+            bottom: -75px !important;
+            left:45px !important;
+        }
+    }
+}
+@include bp(max-width,1024px) {
+    .engo-banner-container .engo-banner .shopnow {
+        display: none !important;
+    }
+    .mb-z {
+        z-index: 6 !important;
+    }
+    @include bp(min-width,1024px) {
+        .fixheightimg {
+            height: 80vh !important;
+            bottom: 0;
+            width: auto!important;
+            @include translate2d(-180px,-20px);
+        }
+        .women-slider {
+            font-size: 120px !important;
+            bottom: -90px;
+            position: absolute;
+        }
+        .collection-slider {
+            font-size: 36px !important;
+            position: absolute;
+            left: 35px;
+            bottom: 22px;
+            @include translate2d(-40px,30px);
+        }
+        .fashion {
+            @include translate2d(-40px,-30px);
+            font-size: 22px !important;
+            position: absolute;
+            top: 125px !important;
+            left: 133px !important;
+            letter-spacing: 2px;
+        }
+        .fiximg-mb {
+            width: 40vw !important;
+            height: auto !important;
+            @include translate2d(-80px, -60px);
+        }
+        .friday {
+            font-size: 50px !important;
+            @include translate2d(-40px,0);
+            position: absolute;
+            bottom: -95px !important;
+            left: 20px !important;
+        }
+        .low-prices {
+            font-size: 24px !important;
+            @include translate2d(-40px,0);
+            position: absolute;
+            bottom: -80px !important;
+            left:10px !important;
+        }
+    }
+}
+@include bp(max-width,667px) {
+    @include bp(min-width,667px) {
+        .women-slider {
+            font-size: 72px !important;
+            bottom: -80px;
+            position: absolute;
+            @include translate2d(-40px,0);
+        }
+        .collection-slider {
+            font-size: 28px !important;
+            position: absolute;
+            left: -30px;
+            bottom: -10px;
+            @include translate2d(-40px,30px);
+        }
+        .fashion {
+            @include translate2d(-40px,-30px);
+            font-size: 18px !important;
+            position: absolute;
+            top: 65px !important;
+            left: 66px !important;
+            letter-spacing: 2px;
+        }
+        .fiximg-mb {
+            width: 30vw !important;
+            height: auto !important;
+            @include translate2d(-60px, -25px);
+        }
+        .friday {
+            font-size: 25px !important;
+            @include translate2d(-40px,0);
+            position: absolute;
+            bottom: -45px !important;
+            left: 20px !important;
+        }
+        .low-prices {
+            font-size: 15px !important;
+            @include translate2d(-40px,0);
+            position: absolute;
+            bottom: -40px !important;
+            left:0px !important;
+        }
+    }
+}
+@include bp(max-width,568px) {
+    @include bp(min-width,568px) {
+        .women-slider {
+            font-size: 70px !important;
+            bottom: -70px;
+            position: absolute;
+            @include translate2d(-40px,0);
+        }
+        .collection-slider {
+            font-size: 24px !important;
+            position: absolute;
+            left: -10px;
+            bottom: -10px;
+            @include translate2d(-40px,30px);
+        }
+        .fashion {
+            @include translate2d(-40px,-30px);
+            font-size: 16px !important;
+            position: absolute;
+            top: 55px !important;
+            left: 70px !important;
+            letter-spacing: 1px;
+        }
+        .fiximg-mb {
+            width: 30vw !important;
+            height: auto !important;
+            @include translate2d(-40px, -20px);
+        }
+        .friday {
+            font-size: 25px !important;
+            @include translate2d(-40px,0);
+            position: absolute;
+            bottom: -45px !important;
+            left: 20px !important;
+        }
+        .low-prices {
+            font-size: 15px !important;
+            @include translate2d(-40px,0);
+            position: absolute;
+            bottom: -40px !important;
+            left:0px !important;
+        }
+    }
+}
+@include bp(max-width,480px) {
+    @include bp(min-width,480px) {
+        .fixheightimg {
+            height: 80vh !important;
+            bottom: 0;
+            width: auto!important;
+            @include translate2d(-35px,-18px);
+        }
+        .women-slider {
+            font-size: 68px !important;
+            bottom: -78px;
+            position: absolute;
+        }
+        .collection-slider {
+            font-size: 22px !important;
+            position: absolute;
+            left:25px;
+            bottom: -20px;
+            @include translate2d(-40px,30px);
+        }
+        .fashion {
+            font-size: 16px !important;
+            @include translate2d(-40px,-30px);
+            position: absolute;
+            top: 60px !important;
+            left:66px !important;
+            letter-spacing: 1px;
+        }
+        .fiximg-mb {
+            width: 40vw !important;
+            height: auto !important;
+            @include translate2d(-45px, -20px);
+        }
+        .friday {
+            font-size: 23px !important;
+            @include translate2d(-40px,0px);
+            position: absolute;
+            bottom: -58px !important;
+            left:30px !important;
+        }
+        .low-prices {
+            font-size: 14px !important;
+            @include translate2d(-40px,-20px);
+            position: absolute;
+            bottom: -75px !important;
+            left:12px !important;
+        }
+    }
+}
+
+/* Home 2 */
+@include bp(max-width,1024px) {
+    .img-home-02 {
+        width: 60vw !important;
+        @include translate2d(-45px,-40px);
+        height: auto !important;
+    }
+    .mb-z {
+        z-index: 6 !important;
+    }
+    .fiximg-mb-home2 {
+        height: 75vh !important;
+        width: auto !important;
+        @include translate2d(0, 40px);
+    }
+}
+@include bp(max-width,768px) {
+    @include bp(min-width,768px) {
+        .fiximg-mb-home2 {
+            height: 88vh !important;
+            @include translate2d(-130px,-170px);
+        }
+        .img-home-02 {
+            width: 65vw !important;
+            @include translate2d(-55px,0px);
+            height: auto !important;
+        }
+        .fiximg-text-01 {
+            width: 35vw !important;
+            @include translate2d(-111px,-55px);
+            height: auto !important;
+        }
+        .fiximg-text-02 {
+            width: 33vw !important;
+            height:auto !important;
+            @include translate2d(-5px,-15px);
+        }
+    }
+}
+@include bp(max-width,736px) {
+    @include bp(min-width,736px) {
+        .img-home-02 {
+            @include translate2d(-30px,-20px);
+        }
+        .fiximg-mb-home2 {
+            @include translate2d(32px,40px);
+        }
+    }
+}
+@include bp(max-width,667px) {
+    @include bp(min-width,667px) {
+        .img-home-02 {
+            width:70vw !important;
+            @include translate2d(-60px,-40px);
+        }
+        .fiximg-mb-home2 {
+            height: 85vh !important;
+            @include translate2d(25px,20px);
+        }
+        .fiximg-text-01 {
+            width: 28vw !important;
+            @include translate2d(-40px,5px);
+            height: auto !important;
+        }
+        .fiximg-text-02 {
+            width: 28vw !important;
+            height:auto !important;
+            @include translate2d(-5px,-15px);
+        }
+    }
+}
+@include bp(max-width,568px) {
+    @include bp(min-width,568px) {
+        .img-home-02 {
+            width:75vw !important;
+            @include translate2d(-60px,-40px);
+        }
+        .fiximg-mb-home2 {
+            height: 85vh !important;
+            @include translate2d(25px,20px);
+        }
+        .fiximg-text-01 {
+            width: 28vw !important;
+            @include translate2d(-40px,5px);
+            height: auto !important;
+        }
+        .fiximg-text-02 {
+            width: 28vw !important;
+            height:auto !important;
+            @include translate2d(-5px,-15px);
+        }
+    }
+}
+@include bp(max-width,479px) {
+    .img-home-02 {
+        width:80vw !important;
+        @include translate2d(-60px,-40px);
+    }
+    .fiximg-mb-home2 {
+        height: 88vh !important;
+        @include translate2d(-110px,-130px);
+    }
+    .fiximg-text-01 {
+        width: 40vw !important;
+        @include translate2d(-66px,-55px);
+        height: auto !important;
+    }
+    .fiximg-text-02 {
+        width: 40vw !important;
+        height:auto !important;
+        @include translate2d(-5px,-15px);
+    }
+}
+@include bp(max-width,414px) {
+    @include bp(min-width,414px) {
+        .fiximg-mb-home2 {
+            @include translate2d(-120px,-130px);
+        }
+    }
+}
+@include bp(max-width,360px) {
+    .fiximg-mb-home2 {
+        height: 86vh !important;
+        @include translate2d(-90px,-95px);
+    }
+    .fiximg-text-01 {
+        @include translate2d(-60px,-55px);
+    }
+}
+@include bp(max-width,480px) {
+    @include bp(min-width,480px) {
+        .img-home-02 {
+            width:80vw !important;
+            @include translate2d(-60px,-40px);
+        }
+        .fiximg-mb-home2 {
+            height: 80vh !important;
+            @include translate2d(0px,15px);
+        }
+        .fiximg-text-01 {
+            width: 28vw !important;
+            @include translate2d(-40px,-20px);
+            height: auto !important;
+        }
+        .fiximg-text-02 {
+            width: 28vw !important;
+            height:auto !important;
+            @include translate2d(-5px,-15px);
+        }
+    }
+}
+
+/* Home 4 */
+@include bp(max-width,768px) {
+    @include bp(min-width,768px) {
+        .slider-04 {
+            .saleoff {
+                position: absolute;
+                top:-10px;
+                left:-20px;
+            }
+            .sale75 {
+                width: 200px !important;
+                height: auto !important;
+                @include translate2d(-20px,-20px);
+            }
+            .friday {
+                left: 30px !important;
+                font-size: 30px !important;
+                @include translate2d(-30px,-30px);
+            }
+            .low-prices {
+                left: 30px !important;
+                font-size:15px !important;
+                @include translate2d(-30px,-40px);
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+@include bp(max-width,1024px) {
+    @include bp(min-width,1024px) {
+        .slider-04 {
+            .saleoff {
+                position: absolute;
+                top:-10px;
+                left:-20px;
+            }
+            .sale75 {
+                width: 260px !important;
+                height: auto !important;
+                @include translate2d(-20px,-20px);
+            }
+            .friday {
+                left: 30px !important;
+                font-size: 30px !important;
+                @include translate2d(2px,-36px);
+            }
+            .low-prices {
+                left: 30px !important;
+                font-size:16px !important;
+                @include translate2d(-30px,-40px);
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+@include bp(max-width,667px) {
+    @include bp(min-width,667px) {
+        .slider-04 {
+            .mb-img-home4-01 {
+                height: 30vh !important;
+                bottom: 0;
+                width: auto!important;
+                @include translate2d(-60px,0px);
+            }
+            .mb-img-home4-02 {
+                @include translate2d(-60px,0px);
+            }
+            .sale75 {
+                width: 150px !important;
+                height: auto !important;
+                @include translate2d(0px,0px);
+            }
+            .friday {
+                left: 45px !important;
+            }
+            .low-prices {
+                left:20px !important;
+            }
+        }
+    }
+}
+@include bp(max-width,480px) {
+    .slider-04 {
+        .mb-img-home4-01 {
+            height: 70px !important;
+            bottom: 0;
+            width: auto!important;
+            @include translate2d(-40px,0px);
+        }
+        .mb-img-home4-02 {
+            @include translate2d(-40px,0px);
+        }
+        .saleoff {
+            position: absolute;
+            top:-15px;
+            left:-18px;
+            font-size: 12px !important;
+        }
+        .sale75 {
+            width: 120px !important;
+            height: auto !important;
+            @include translate2d(-20px,-20px);
+        }
+        .friday {
+            left: 30px !important;
+            font-size: 18px !important;
+            @include translate2d(-30px,-30px);
+        }
+        .low-prices {
+            display: none !important;
+        }
+    }
+}
+@include bp(max-width,360px) {
+    .slider-04 {
+        .mb-img-home4-01 {
+            height: 50px !important;
+        }
+        .friday {
+            left: 30px !important;
+            font-size: 16px !important;
+            @include translate2d(-30px,-10px);
+        }
+    }
+}
+

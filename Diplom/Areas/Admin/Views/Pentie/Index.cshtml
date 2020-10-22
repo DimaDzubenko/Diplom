@@ -1,0 +1,123 @@
+﻿@model Diplom.Models.ViewModels.Shop.Pentie.PentieListViewModel
+
+@{
+    ViewData["Title"] = "Penties";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>@ViewData["Title"]</h2>
+            <p>
+                <a asp-action="Create">Create New</a>
+            </p>
+        </div>
+        @* ======================================================================================================== *@
+        <div class="col-2">
+            <div id="sorry-background" class="box info-bar main-boxshadow" data-animate="fadeInUpBig">
+                <h3>Categories:</h3>
+                <div id="categories">
+                    @* список категори частичное представление *@
+                    @*@await Component.InvokeAsync("Category")*@
+                </div>
+            </div>
+            <div id="sorry-background" class="box info-bar main-boxshadow" data-animate="fadeInUpBig">
+                <h3>Brands:</h3>
+                <div id="brands">
+                    @* список брендов частичное представление *@
+                    @*@await Component.InvokeAsync("Brands")*@
+                </div>
+            </div>            
+        </div>
+        @* =============================================================================================================== *@
+
+        <div class="col-10">
+            @if (Model.Penties.Count() <= 0)
+            {
+                <div class="col-md-9 col-sm-8">
+                    <div id="sorry-background" class="box info-bar main-boxshadow text-center" data-animate="fadeInUpBig">
+                        <h1>Sorry</h1>
+                        <h2>There are no products in this category</h2>
+                        <a asp-action="Index" class="btn btn-lg btn-group-vertical">Continue shoping</a>
+                    </div>
+                </div>
+            }
+
+            @if (Model.Penties.Count() > 0)
+            {
+                <form class="form-inline">
+                    <div class="products-showing">
+                        Showing <strong>@ViewBag.ShowingCount</strong> of <strong>@ViewBag.TotalCount</strong> products
+                    </div>
+                    <div class="products-number">
+                        <strong>Show</strong>
+                        <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-PageSize="12">12</a>
+                        <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-PageSize="24">24</a>
+                        <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-PageSize="36">36</a>
+                        products
+                    </div>
+                    <div class="products-sort-by">
+                        <strong>Sort by</strong>
+                        <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-sort="1">sort by name</a>
+                        <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-sort="2">sort by price</a>
+                    </div>
+                </form>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Brand</th>
+                            <th>Category</th>
+                            <th>Size</th>
+                            <th>Color</th>
+                            <th>Gender</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Penties)
+                        {
+                            <tr>
+                                <td>@product.PentieId</td>
+                                <td>@product.Name</td>
+                                <td>@product.Price</td>
+                                <td>@product.Discription</td>
+                                <td>
+                                    @if (product.Image != null)
+                                    {
+                                        <img src="data:image/jpeg;base64,@(Convert.ToBase64String(product.Image))" alt="" style="height: 200px">
+                                    }
+                                    else
+                                    {
+                                        <img src="~/images/product/product.jpg" alt="" style="height: 200px">
+                                    }
+                                </td>
+                                <td>@product.PBrandName</td>
+                                <td>@product.PCategoryName</td>                                
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@product.PentieId">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@product.PentieId">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@product.PentieId">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <page-link page-model="Model.PageViewModel"
+                           page-action="Index"
+                           page-classes-enable="true"
+                           page-class="btn" page-class-normal="btn-default"
+                           page-class-selected="btn-primary"
+                           page-url-category="@Model.CurrentCategory"
+                           page-url-brand="@Model.CurrentBrand"                           
+                           class="btn-group pull-right">
+                </page-link>
+            }
+        </div>
+    </div>
+</div>

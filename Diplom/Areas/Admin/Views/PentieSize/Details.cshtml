@@ -1,0 +1,48 @@
+﻿@model Diplom.Models.ViewModels.Shop.Pentie.PentieSizeViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PentieSizeViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PentieId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PentieId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PentieName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PentieName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SizeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SizeName)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

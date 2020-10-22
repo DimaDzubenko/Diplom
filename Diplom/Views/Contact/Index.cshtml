@@ -1,0 +1,72 @@
+﻿@model Diplom.Models.ContactForm.ContactFormModel
+@{
+    Layout = "~/Views/Shared/_LayoutSecond.cshtml";
+    ViewData["Title"] = "Contact US";
+}
+<section id="map" class="map contact-map">
+    <h2 class="none">map</h2>
+    <div id="map-canvas"> </div>
+</section>
+<section id="contact" class="contact">
+    <h2 class="none">contact</h2>
+    <div class="container">
+        <div class="row">
+            <div class="content-contact clearfix">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-hm-4 col-mb-12">
+                    <div class="item-contact drop-line">
+                        <img src="~/images/contact/drop-line.png" alt="" class="icon">
+                        <h2 class="title">Drop Us A Line</h2>
+                        <h4 class="des">Business standards services compliant. Users without extensible costs.</h4>
+                        <span>hello@quato-shop.com</span>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-4 col-hm-4 col-mb-12">
+                    <div class="item-contact commercial">
+                        <img src="~/images/contact/commercial.png" alt="" class="icon">
+                        <h2 class="title">Commercial</h2>
+                        <h4 class="des">Business standards services compliant. Users without extensible costs.</h4>
+                        <span>commercial@quato-shop.com</span>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-4 col-hm-4 col-mb-12">
+                    <div class="item-contact drop-line">
+                        <img src="~/images/contact/visit-office.png" alt="" class="icon">
+                        <h2 class="title">Visit Our Office</h2>
+                        <h4 class="des">262 Milacina Mrest Street, Behansed, Paris, France</h4>
+                        <span>(+38) 000-000-0000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="title title-contact"><span>LEAVE A MESSAGE!</span></h2>
+
+        <form asp-action="Index" asp-controller="Contact" class="contact-form" method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-field">
+                        <input class="input-text" asp-for="Name" type="text" name="name" placeholder="Your Name *" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-field">
+                        <input class="input-text" asp-for="Email" type="email" name="email" placeholder="Your email *" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-field">
+                        <input class="input-text" asp-for="Phone" type="tel" name="phone" placeholder="Your phone">
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <textarea asp-for="Message" name="message" placeholder="Your message *" cols="30" rows="8" required></textarea>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <input type="submit" value="Send Message!" class="button" />
+                    @*<div class="button"><a href="#"><span>Send mail</span></a></div>*@
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

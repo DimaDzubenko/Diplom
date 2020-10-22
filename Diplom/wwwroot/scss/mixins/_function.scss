@@ -1,0 +1,157 @@
+@mixin transititon($s) {
+    -webkit-transition: all $s ease;
+    transition: all $s ease;
+    -moz-transition: all $s ease;
+    -ms-transition: all $s ease;
+    -o-transition: all $s ease;
+}
+@mixin transitbg($s) {
+    -webkit-transition: background $s ease;
+    transition: background $s ease;
+    -moz-transition: background $s ease;
+    -ms-transition: background $s ease;
+    -o-transition: background $s ease;
+}
+@mixin scale($number : 1){
+    -moz-transform: scale($number);
+    -webkit-transform: scale($number);
+    -o-transform: scale($number);
+    -ms-transform: scale($number);
+    transform: scale($number);
+}
+@mixin scale3d($x : 1,$y:1,$z:1){
+    -moz-transform: scale3d($x,$y,$z);
+    -webkit-transform: scale3d($x,$y,$z);
+    -o-transform: scale3d($x,$y,$z);
+    -ms-transform: scale3d($x,$y,$z);
+    transform: scale3d($x,$y,$z);
+}
+@mixin boxshawdown ($h,$v,$b,$s,$o) {
+    -webkit-box-shadow: $h $v $b $s rgba(0,0,0,$o);
+    -moz-box-shadow: $h $v $b $s rgba(0,0,0,$o);
+    box-shadow: $h $v $b $s rgba(0,0,0,$o);
+}
+@mixin transition-timing-function($timing-function) {
+    -moz-transition-timing-function: $timing-function;
+    -o-transition-timing-function: $timing-function;
+    -webkit-transition-timing-function: $timing-function;
+    transition-timing-function: $timing-function;
+}
+
+@mixin translate($x : 0px,$y:0px,$z:0px) {
+    -moz-transform: translate3d($x,$y,$z);
+    -webkit-transform: translate3d($x,$y,$z);
+    -o-transform: translate3d($x,$y,$z);
+    -ms-transform: translate3d($x,$y,$z);
+    transform: translate3d($x,$y,$z);
+}
+@mixin translate2d($x : 0px,$y:0px) {
+    -moz-transform: translate($x,$y);
+    -webkit-transform: translate($x,$y);
+    -o-transform: translate($x,$y);
+    -ms-transform: translate($x,$y);
+    transform: translate($x,$y);
+}
+@mixin translatex($x:0) {
+    -ms-transform: translatex($x);
+    -webkit-transform: translatex($x);
+    -moz-transform: translatex($x);
+    -o-transform: translatex($x);
+    transform : translatex($x);
+}
+@mixin transform($y:0) {
+    -ms-transform: ($y);
+    -webkit-transform: ($y);
+    -moz-transform: ($y);
+    -o-transform: ($y);
+    transform : ($y);
+}
+@mixin appearance($appearance){
+    appearance: $appearance;
+    -moz-appearance: $appearance;
+    -ms-appearance: $appearance;
+    -o-appearance: $appearance;
+    -webkit-appearance: $appearance;
+}
+@mixin rotate($rotate:0) {
+    transform: rotate($rotate) ;
+    -webkit-transform: rotate($rotate) ;
+    -moz-transform: rotate($rotate) ;
+    -o-transform: rotate($rotate) ;
+    -ms-transform: rotate($rotate) ;
+}
+@mixin rotatey($rotate:0) {
+    transform: rotateY($rotate) ;
+    -webkit-transform: rotateY($rotate) ;
+    -moz-transform: rotateY($rotate) ;
+    -o-transform: rotateY($rotate) ;
+    -ms-transform: rotateY($rotate) ;
+}
+@mixin delay($s:0.5s) {
+    -moz-transform: $s;
+    -o-transform: $s ;
+    -ms-transform: $s ;
+    -webkit-transition-delay: $s; /* Safari */
+    transition-delay: $s;
+}
+@mixin backface {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+$mq-support: true !default;
+$mq-fixed-value: 1024px !default;
+@mixin bp($feature, $value) {
+    // Set global device param
+    $media: only screen;
+
+    // Media queries supported
+    @if $mq-support == true {
+
+        @media #{$media} and ($feature: $value) {
+            @content;
+        }
+        // Media queries not supported
+    } @else {
+
+        @if $feature == 'min-width' {
+            @if $value <= $mq-fixed-value {
+                @content;
+            }
+        } @else if $feature == 'max-width' {
+            @if $value >= $mq-fixed-value {
+                @content;
+            }
+        }
+
+    }
+}
+/* Icon Pop */
+@-webkit-keyframes hvr-icon-pop {
+    50% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+@keyframes hvr-icon-pop {
+    50% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+
+/* Icon Pulse Shrink */
+@-webkit-keyframes hvr-icon-pulse-shrink {
+    to {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+}
+
+@keyframes hvr-icon-pulse-shrink {
+    to {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+}

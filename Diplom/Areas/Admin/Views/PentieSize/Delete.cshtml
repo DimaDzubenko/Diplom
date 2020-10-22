@@ -1,0 +1,50 @@
+﻿@model Diplom.Models.ViewModels.Shop.Pentie.PentieSizeViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PentieSizeViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PentieId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PentieId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PentieName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PentieName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SizeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SizeName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,42 @@
+﻿@model Diplom.Models.ViewModels.Shop.Pentie.PColorListViewModel
+
+@{
+    ViewData["Title"] = "Penties colors";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>Id</th>*@
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PColors)
+        {
+            <tr>
+                @*<td>@item.PColorId</td>*@
+                <td>@item.Name</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PColorId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PColorId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PColorId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<page-link page-model="@Model.PageViewModel"
+           page-action="Index"
+           page-classes-enable="true"
+           page-class="btn"
+           page-class-normal="btn-default"
+           page-class-selected="btn-primary"
+           class="btn-group pull-right">
+</page-link>

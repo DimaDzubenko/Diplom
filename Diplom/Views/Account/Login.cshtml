@@ -1,0 +1,62 @@
+﻿@model Diplom.Models.ViewModels.Account.LoginViewModel
+
+@*<h3>Вход в приложение</h3>
+*@
+
+<section id="main" class="site-main site-login">
+    <div class="engo-breadscrumb overlayo">
+        <div class="container">
+            <div class="row">
+                <ol class="breadcrumb ">
+                    <li class="home"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li>
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li>Login</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="main-container" class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+
+                <div class="signin">
+                    <h2 class="heading-title">Sign in</h2>
+                    <p>Hello, welcome to your account.</p>
+                    @*<div class="social-signin clearfix">
+                        <a href="#" target="_blank" class="button facebook"><i class="fa fa-facebook"></i> SIGN IN WITH FACEBOOK</a>
+                        <a href="#" target="_blank" class="button twitter"><i class="fa fa-twitter"></i> SIGN IN WITH TWITTER</a>
+                    </div>*@
+
+                <form method="post" asp-controller="Account" asp-action="Login"
+                      asp-route-returnUrl="@Model.ReturnUrl">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div>
+                        <label asp-for="Email">Email Address *</label><br />
+                        <input asp-for="Email" class="input-text" placeholder="Your email" required id="email-"/>
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                    <div>
+                        <label asp-for="Password">Password *</label><br />
+                        <input asp-for="Password" class="input-text" placeholder="Password" required id="pass"/>
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                    <div>
+                        <label asp-for="RememberMe">Remember me!</label><br />
+                        <input asp-for="RememberMe" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Login now" class="input-submit" />
+                    </div>
+                </form>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+            </div>
+        </div>       
+    </div>
+</section>

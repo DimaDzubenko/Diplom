@@ -1,0 +1,614 @@
+/* 8.1 Page Contact */
+.content-contact {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    .item-contact {
+        padding: 0 50px;
+        img {
+            display: block;
+            margin:0 auto;
+        }
+        h2.title {
+            font:400 18px/18px $font-family-base;
+            margin-top:30px;
+            margin-bottom: 10px;
+            color: $text-color-2;
+        }
+        h4.des {
+            font:400 14px/24px $font-Raleway;
+            color: #888888;
+            margin-bottom: 20px;
+        }
+        span {
+            font:400 14px $font-family-base;
+            color: $main-color;
+        }
+    }
+}
+.title-contact {
+    margin-top: 0;
+    font:700 20px/20px $font-family-base;
+    color: $text-color-2;
+    text-align: center;
+    position: relative;
+    padding-bottom: 45px;
+    margin-bottom: 0;
+    &:after {
+        content: "";
+        background: $main-color;
+        display: block;
+        width: 50px;
+        height: 2px;
+        position: absolute;
+        left:50%;
+        margin-left: -25px;
+        bottom: 35px;
+    }
+}
+.contact-form {
+    margin-bottom: 100px;
+    .input-field .input-text {
+        height: 40px;
+        text-indent: 20px;
+        font:400 14px $font-Raleway;
+        color: #b5b5b5;
+        margin-bottom: 30px;
+        border: 1px solid $border-color2;
+    }
+    textarea {
+        text-indent: 20px;
+        width: 100%;
+        border: 1px solid $border-color2;
+        font:400 14px $font-Raleway;
+        color: #b5b5b5;
+        padding-top: 10px;
+        margin-bottom: 30px;
+    }
+    .button {
+        width: 100%;
+        text-align: center;
+        background: $main-color;
+        border-radius: 20px;
+        @include transititon(0.3s);
+        a {
+            color: #fff;
+            font:700 14px/40px $font-family-base;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        &:hover {
+            background: $text-color-2;
+        }
+    }
+}
+/* 8.1 End Page Contact */
+
+/* 8.2 LogIn */
+.signin,.register {
+    background: #fff;
+    margin-top: 60px;
+    padding: 30px;
+    .heading-title {
+        font:700 20px/20px $font-family-base;
+        color: $text-color-2;
+        position: relative;
+        margin: 0;
+        text-transform: uppercase;
+        padding-bottom: 25px;
+        &:after {
+            position: absolute;
+            left:0;
+            content: '';
+            bottom: 15px;
+            width: 50px;
+            height: 1px;
+            display: block;
+            background: $main-color;
+        }
+    }
+    p {
+        font:400 15px/48px $font-Raleway;
+        color: #888888;
+    }
+    .social-signin {
+        margin-bottom: 45px;
+        .button {
+            height: 40px;
+            width: 250px;
+            display: block;
+            font:400 14px/40px $font-family-base;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
+            float: left;
+            i {
+                font-size: 18px;
+                margin-right: 5px;
+                vertical-align: middle;
+                line-height: 40px;
+            }
+            &.facebook{
+                background: #3B5998;
+                margin-right: 10px;
+            }
+            &.twitter {
+                background: #55ACEE;
+            }
+        }
+    }
+    .input-field label {
+        color: $text-hform;
+        margin-bottom: 7px;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    .input-field {
+        input[type="text"], input[type="email"], input[type="password"] {
+            height: 40px;
+            width: 100%;
+            text-indent: 20px;
+            font:400 14px $font-Raleway;
+            color: $border-color2;
+            border: 1px solid $border-color2;
+        }
+    }
+    .input-submit {
+        width: 150px;
+    }
+    .checkbox input, .radio input[type="radio"] {
+        margin: 0 !important;
+        display: none;
+    }
+    .input-field .checkbox label {
+        position: relative;
+        padding-left: 30px;
+        font:400 14px/20px $font-Raleway;
+        color: #888888;
+        vertical-align: middle;
+        &:before {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #B5B5B5;
+            content: "";
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .checkbox input:checked + label::after {
+        content: "\f00c";
+        @include fontawesome;
+        font-size: 16px;
+        color: #212121;
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+
+}
+.signin {
+    .input-field .checkbox {
+        display: inline-block;
+    }
+    .fogot {
+        display: inline-block;
+        float: right;
+        font:400 14px/43px $font-Raleway;
+        color: $main-color;
+        letter-spacing: 1px;
+    }
+    .input-submit {
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+}
+.register {
+    .input-submit {
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+    .checkbox {
+
+    }
+}
+/* 8.2 End LogIn*/
+
+/* 8.3 404 page */
+.page-404 {
+    height: 885px;
+    width: 100%;
+    text-align: center;
+    padding: 132px 0 250px;
+    background: url("../images/bg-404.jpg") no-repeat;
+    background-position: center center;
+    position: relative;
+    .content-404 {
+        position: relative;
+        z-index: 99;
+    }
+    h2 {
+        font:700 36px/19px $font-family-base;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 45px;
+        margin-bottom: 25px;
+    }
+    .des-404 {
+        font:400 18px/40px $font-Raleway;
+        color: #fff;
+        a {
+            width: 150px;
+            height: 40px;
+            border-radius: 20px;
+            background: $main-color;
+            font:700 15px/40px $font-family-base;
+            color: #fff;
+            display: inline-block;
+            margin-left: 20px;
+            text-transform: uppercase;
+            @include transititon(0.2s);
+            &:hover {
+                background: $text-color-2;
+                color: $main-color;
+            }
+        }
+    }
+    .search-404 {
+        position: relative;
+        height: 40px;
+        width: 760px;
+        display: block;
+        margin: 50px auto 0;
+        .email {
+            display: block;
+            height: 40px;
+            width: 100%;
+            border-radius: 20px;
+            text-indent: 20px;
+            padding-right: 110px;
+            border: 1px solid rgba(51,51,51,0.8);
+            background: transparent;
+            color: rgba(255,255,255,0.3);
+            font:400 13px/40px $font-Raleway;
+        }
+        .btn-search {
+            display: block;
+            height: 36px;
+            width: 100px;
+            text-align: center;
+            color: $text-color-2;
+            font: 700 13px/33px "Montserrat";
+            background: #fff;
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            border: none;
+            text-transform: uppercase;
+            border-radius: 18px;
+            @include transititon(0.3s);
+            &:hover {
+                background: $main-color;
+                color: #fff;
+            }
+        }
+    }
+}
+@include bp(max-width,1600px) {
+    @include bp(min-width,1200px) {
+        .page-404 {
+            height: calc(100vh - 165px);
+            min-height: 540px;
+            padding: 0;
+            width: 100%;
+            position: relative;
+            z-index: 9;
+            .content-404 {
+                position: absolute;
+                top:50%;
+                left:50%;
+                @include translate2d(-50%,-50%);
+                width: 100%;
+            }
+        }
+    }
+}
+/* 8.3 End 404 page */
+
+/* 8.4 FAQS  */
+.site-faqs {
+    background: #fff;
+    .toggle {
+        padding-top: 60px;
+    }
+}
+.toggle-controls {
+    margin: 0;
+    padding: 0;
+    list-style: outside none none;
+    li {
+        border-top: 1px solid #E0E0E0;
+        position: relative;
+        &:first-child {
+            border-top: none;
+        }
+        a {
+            color: #888;
+            display: block;
+            border-right: 1px solid #E0E0E0;
+            font:400 14px/48px $font-family-base;
+            padding-left: 50px;
+            &:before {
+                position: absolute;
+                content: "";
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid #888;
+                top: 50%;
+                left: 30px;
+                margin-top: -5px;
+            }
+            &.active {
+                font-weight: bold;
+                border-right: none;
+                color: $text-color-2;
+            }
+            &:hover {
+                color: $text-color-2;
+            }
+        }
+    }
+}
+.toggle-content {
+    padding: 20px 30px 35px 10px;
+    display: none;
+    .toogle-title {
+        font:700 24px/48px $font-family-base;
+        color: $main-color;
+        margin-top: 0;
+    }
+    p {
+        font:400 14px/24px $font-Raleway;
+        color: #888;
+    }
+}
+/* 8.4  End FAQS */
+
+/* 8.5 About */
+.site-about {
+    background: #fff;
+    padding-bottom: 100px;
+    .main-about {
+        padding-top: 65px;
+        padding-bottom: 58px;
+        .image-about {
+            margin-top: 35px;
+            height: 538px;
+            width: 100%;
+            display: block;
+            position: relative;
+            border: 8px solid $main-color;
+            img {
+                position: absolute;
+                left:0px;
+                bottom: 0px;
+                z-index: 3;
+            }
+        }
+        .about-info {
+            .title-about {
+                .title {
+                    margin-top: 0;
+                    margin-bottom: 45px;
+                    border-bottom: 1px solid #bcbcbc;
+                    font:400 30px/19px $font-family-base;
+                    color: $text-color-2;
+                    padding-bottom: 17px;
+                }
+            }
+            .des {
+                p {
+                    font:400 14px/24px $font-Raleway;
+                    margin-bottom: 20px;
+                    color: #888888;
+                }
+            }
+            .social-about {
+                label {
+                    font:400 19px/20px $font-family-base;
+                    color: $text-color-2;
+                    display: inline-block;
+                    margin-right: 15px;
+                    margin-bottom: 0;
+                }
+                ul {
+                    display: inline-block;
+                }
+                li {
+                    display: inline-block;
+                    a {
+                        margin: 0 15px;
+                        font-size: 24px;
+                        line-height: 20px;
+                        &.twitter {
+                            color: $twitter;
+                        }
+                        &.facebook {
+                            color: $facebook;
+                        }
+                        &.pinterest {
+                            color: $pinterest;
+                        }
+                        &.behance {
+                            color: $behance;
+                        }
+                        &.dribbble {
+                            color: $dribbble;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .intro {
+        border-bottom: 1px solid #ecf0f1;
+        border-top: 1px solid #ecf0f1;
+        padding: 0;
+        margin-bottom: 90px;
+        .item-intro {
+            padding: 50px 70px;
+            text-align: center;
+            width: 25%;
+            border-right:1px solid #ecf0f1;
+            display: block;
+            float: left;
+            @include transititon(0.3s);
+            &.last {
+                border-right: none;
+            }
+            .icon {
+                span {
+                    color: $main-color;
+                    font-size: 50px;
+                }
+            }
+            .title {
+                font:400 18px/18px $font-family-base;
+                margin-top: 50px;
+                margin-bottom: 15px;
+                a {
+                    color: $text-color-2;
+                    @include transititon(0.2s);
+                }
+                &:hover {
+                    a {
+                        color: $main-color;
+                    }
+                }
+            }
+            .des {
+                font:400 14px/24px $font-Raleway;
+                color: #888888;
+            }
+            &:hover {
+                background: #f9f9f9;
+            }
+        }
+    }
+    .title-member {
+        text-align: center;
+        .title {
+            margin-top: 0;
+            margin-bottom: 40px;
+            font:400 30px/25px $font-family-base;
+            color: $text-hform;
+            text-transform:uppercase;
+            padding-bottom: 25px;
+            position: relative;
+            &:before {
+                content: '';
+                background: $main-color;
+                width:100px;
+                height:2px;
+                position: absolute;
+                bottom: 0;
+                left:50%;
+                margin-left: -50px;
+            }
+        }
+    }
+    .team-members {
+        .merber {
+            height: 465px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            .social-member {
+                height: 58px;
+                text-align: center;
+                ul {
+                    display: block;
+                    li {
+                        display: inline-block;
+                        a {
+                            font-size: 20px;
+                            margin: 0 10px;
+                            line-height: 56px;
+                            color: $text-color-2;
+                            &.twitter:hover {
+                                color: $twitter;
+                            }
+                            &.facebook:hover {
+                                color: $facebook;
+                            }
+                            &.pinterest:hover {
+                                color: $pinterest;
+                            }
+                            &.behance:hover {
+                                color: $behance;
+                            }
+                            &.dribbble:hover {
+                                color: $dribbble;
+                            }
+                        }
+                    }
+                }
+            }
+            .title-merber {
+                height: 60px;
+                text-align: center;
+                display: block;
+                .name {
+                    font:400 18px/18px $font-family-base;
+                    color: $text-hform;
+                    text-transform: uppercase;
+                }
+                .job {
+                    font:400 14px/14px $font-family-base;
+                    color: $main-color;
+                }
+            }
+        }
+        @include bp(min-width,768px) {
+            .merber {
+                .social-member {
+                    transform: translate3d(0px, -58px, 0px);
+                    @include transititon(0.5s);
+                }
+                .images-merber {
+                    transform: translate3d(0px, -58px, 0px);
+                    @include transititon(0.5s);
+                }
+                .title-merber {
+                    transform: translate3d(0px, -58px, 0px);
+                    @include transititon(0.5s);
+                }
+                &:hover {
+                    .social-member {
+                        transform: translate3d(0px, 0px, 0px);
+                    }
+                    .images-merber {
+                        transform: translate3d(0px, 0px, 0px);
+                    }
+                    .title-merber {
+                        transform: translate3d(0px, 0px, 0px);
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1600px) {
+    .site-about .intro .item-intro {
+        padding: 40px 30px;
+    }
+}
+/* 8.5 About */

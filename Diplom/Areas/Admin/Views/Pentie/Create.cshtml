@@ -1,0 +1,66 @@
+﻿@model Diplom.Models.ViewModels.Shop.Pentie.PentieViewModel
+
+@{
+    ViewData["Title"] = "Create product";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>@ViewData["Title"]</h2>
+            <a asp-action="Index">Back to List</a>
+        </div>
+        <div class="col-6">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input asp-for="Name" class="form-control" placeholder="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Price" class="form-control" placeholder="Price" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <textarea asp-for="Discription" class="form-control" placeholder="Description"></textarea>
+                    <span asp-validation-for="Discription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <select asp-for="PCategoryId" class="form-control" asp-items="ViewBag.PCategoryId">
+                        <option selected="selected" disabled="disabled">Select the CATEGORY</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select asp-for="PBrandId" class="form-control" asp-items="ViewBag.PBrandId">
+                        <option selected="selected" disabled="disabled">Select the BRAND</option>
+                    </select>
+                </div>
+                <div class="form-group text-center">
+                    <div id="upload_button">
+                        <label>
+                            <input name="Image" type="file" class="form-control">
+                            @*<span class="btn btn-primary">Add image</span>*@
+                        </label>
+                    </div>
+                    <input class="btn btn-success" type="submit" value="Create" />
+                    <a class="btn btn-danger" asp-action="Index">Cancel</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label class="control-label">
+                    @*Category:*@
+                    <a class="btn btn-warning btn-xs" asp-route-area="Admin" asp-controller="Categories" asp-action="Create">Add new Category</a>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">
+                    @*Brand:*@
+                    <a class="btn btn-warning btn-xs" asp-route-area="Admin" asp-controller="Brands" asp-action="Create">Add new Brand</a>
+                </label>
+            </div>            
+        </div>
+    </div>
+</div>
+

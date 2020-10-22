@@ -1,0 +1,148 @@
+.swiper-container {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.swiper-slide {
+    .bg-slider {
+        width: 100%;
+        height: 100%;
+    }
+    .bg-slider-home3-01 {
+        background-image: url("images/slider/slider-home-03-01.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .bg-slider-home3-02 {
+        background-image: url("images/slider/slider-home-03.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+.slider-home-v3 {
+    margin-bottom: 100px;
+    .swiper-pagination-bullet {
+        background: #5c5c5d;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        width: 10px;
+        height: 10px;
+        background: #5c5c5d;
+    }
+}
+.swiper-wrapper {
+    max-width: 100%;
+    height: auto;
+    .child-swiper {
+        position: absolute;
+        left: 0;
+        top:0;
+        bottom: 0;
+        right: 0;
+        z-index: 9;
+        .container {
+            position: relative;
+            height: 100%;
+            display: block;
+            .swiper-product,.swiper-product-02 {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 580px;
+                overflow: hidden;
+                padding-top: 20px;
+                z-index: 999;
+                width: 810px;
+                margin-top: -290px;
+                .product-ss {
+                    opacity: 0.2;
+                    width:270px;
+                    @include transititon(0.3s);
+                    position: relative;
+                    height: 550px;
+                    .product {
+                        text-align: center;
+                        @include scale(0.874);
+                        display: block;
+                        float: none;
+                        margin: 0;
+                        @include transititon(0.3s);
+                        .meta {
+                            text-align: left;
+                        }
+                    }
+                    .countdown {
+                        display: none;
+                        margin-top: 10px;
+                        margin-left:0px;
+                        width: 270px;
+                        .timer-view {
+                            .count {
+                                display: inline-block;
+                                width: 60px;
+                                height: 61px;
+                                text-align: center;
+                                border: 2px solid #fff;
+                                margin-right: 6px;
+                                .number {
+                                    font:700 24px/24px $font-family-base;
+                                    color: #fff;
+                                    display: block;
+                                    width: 100%;
+                                    margin-bottom: 0;
+                                    margin-top: 10px;
+                                }
+                                .text {
+                                    font:400 12px/12px $font-Playfair;
+                                    display: block;
+                                    width: 100%;
+                                    margin-top: 0;
+                                    margin-bottom: 8px;
+                                    text-transform: uppercase;
+                                    color: #fff;
+                                }
+                                &.seconds {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+
+                    }
+                    &.swiper-slide-active {
+                        opacity: 1;
+                        .product {
+                            @include scale(1);
+                        }
+                        .countdown {
+                            display: block;
+                            position: absolute;
+                            left:10px;
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+            .swiper-product-02 {
+                left: auto;
+                right: 0;
+            }
+        }
+        .product-front, .product-back {
+            height: 469px;
+        }
+        .product .caption {
+            height: 233px;
+        }
+        .make3D.animate {
+            height: 467px;
+            -webkit-box-shadow: 0px 0px 20px 0px #ADADAD;
+            -moz-box-shadow: 0px 0px 20px 0px #ADADAD;
+            box-shadow: 0px 0px 20px 0px #ADADAD;
+        }
+    }
+}

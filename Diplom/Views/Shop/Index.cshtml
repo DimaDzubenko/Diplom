@@ -1,0 +1,225 @@
+﻿@model Diplom.Models.ViewModels.Shop.Pentie.PentieListViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutSecond.cshtml";
+    ViewData["Title"] = "Shop";
+}
+<section id="main" class="site-main shop-grid-leftsidebar">
+    <h2 class="none">Main</h2>
+    <div class="engo-breadscrumb overlayo">
+        <div class="container">
+            <div class="row">
+                <ol class="breadcrumb ">
+                    <li class="home"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li>
+                        <a asp-controller="Shop" asp-action="Index">Shop</a>
+                    </li>
+                    <li>Lingerie shop</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <section id="main-container" class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+                <div id="sidebar" class="sidebar left-sidebar">
+                    @* Category *@
+                    <aside class="widget product-cat-widget">
+
+                        <h3 class="widget-title">Category</h3>
+                        @await Component.InvokeAsync("Category")
+
+                    </aside>
+
+                    @* Brands *@
+                    <aside class="widget">
+
+                        <h3 class="widget-title">By Brands</h3>
+                        @await Component.InvokeAsync("Brand")
+                        
+                    </aside>
+
+                </div><!-- .left-sidebar -->
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-8 col-xs-12">
+                <div id="main-content" class="main-content category-sidebar">
+                    @* сортировка *@
+                    <div class="toolbar products-top-toolbar clearfix">
+                        <form class="form-inline">
+                            <div class="products-showing">
+                                Showing <strong>@ViewBag.ShowingCount</strong> of <strong>@ViewBag.TotalCount</strong> products
+                            </div>
+                            <div class="products-number">
+                                <strong>Show</strong>
+                                <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-PageSize="12">12</a>
+                                <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-PageSize="24">24</a>
+                                <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-PageSize="36">36</a>
+                                products
+                            </div>
+                            <div class="products-sort-by">
+                                <strong>Sort by</strong>
+                                <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-sort="1">sort by name</a>
+                                <a asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-brand="@Model.CurrentBrand" asp-route-sort="2">sort by price</a>
+                            </div>
+                        </form>
+
+                        
+                    </div>
+
+                    <div class="products products-grid">
+                        <div class="row">
+                            @* Проверка на наличие товара! *@
+                            @if (Model.Penties.Count() <= 0)
+                            {
+                                <div class="col-md-9 col-sm-8">
+                                    <div id="sorry-background" class="box info-bar main-boxshadow text-center" data-animate="fadeInUpBig">
+                                        <h1>Sorry</h1>
+                                        <h2>There are no products in this category</h2>
+                                        <a asp-action="Index" class="btn btn-lg btn-group-vertical">Continue shoping</a>
+                                    </div>
+                                </div>
+                            }
+                            @if (Model.Penties.Count() > 0)
+                            {
+                                @* продукт *@
+                                @foreach (var item in Model.Penties)
+                                {
+                                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 col-mb-12 full-width">
+                                        <div class="product engo-product-list large">
+                                            <div class="info-large">
+                                                <h3 class="name">
+                                                    <a asp-area="" asp-controller="Shop" asp-action="Details" asp-route-id="@item.PentieId">@item.Name</a>
+                                                </h3>
+                                                <div class="rating">
+
+                                                </div>
+                                                <div class="price">
+                                                    <ins><span class="amount">@item.Price UAH</span></ins>
+                                                </div>
+                                                <div class="des">
+                                                    <p>@item.Discription</p>
+                                                </div>
+                                                @using (Html.BeginForm("AddToBasket", "Cart"))
+                                                {
+                                                    <div class="button-action">
+                                                        <input type="hidden" name="itemId" value="@item.PentieId" />
+                                                        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                                                        <div class="add-cart">
+                                                            @*<a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                                <i class="icon-cart">add to cart</i>
+                                                            </a>*@
+                                                            <button style="margin:5px;" class="btn btn-warning btn-small" type="submit">@*<i class="fa fa-shopping-cart"></i>*@  Add to cart</button>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                </div>
+                                            <div class="make3D flip180">
+                                                <div class="product-front">
+                                                    <div class="shadow"></div>
+                                                    <div class="image">
+                                                        <div class="product-image hover-product">
+                                                            <figure>
+                                                                @if (@item.Image != null)
+                                                                {
+                                                                    <img src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Image))" alt="product" class="img-responsive center-block">
+                                                                }
+                                                                else
+                                                                {
+                                                                    <img src="~/images/product/product.jpg" alt="product" class="img-responsive center-block">
+                                                                }
+                                                            </figure>
+                                                        </div>                                                        
+                                                        <div class="button-action">
+                                                            <div class="add-cart">                                                                
+                                                                <a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                                    <i class="icon-cart">add to cart</i>
+                                                                </a>
+                                                            </div>                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="image_overlay"></div>
+                                                    <div class="caption">
+                                                        <div class="meta">
+                                                            <h3 class="name">
+                                                                <a href="#">American Vintage</a>
+                                                            </h3>
+                                                            <div class="rating">
+                                                                <div class="star-rating">
+                                                                    <span style="width:80%"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="price">
+                                                                <del><span class="amount">$70</span></del>
+                                                                <ins><span class="amount">$35</span></ins>
+                                                            </div>
+
+                                                            <div class="product-options">
+                                                                <div class="sizes-product">
+                                                                    <strong>Sizes</strong>
+                                                                    <a href="#"><span>XS, </span></a>
+                                                                    <a href="#"><span>S, </span></a>
+                                                                    <a href="#"><span>M, </span></a>
+                                                                    <a href="#"><span>L, </span></a>
+                                                                    <a href="#"><span>XL, </span></a>
+                                                                    <a href="#"><span>XXL</span></a>
+                                                                </div>
+                                                                <div class="scolor-product">
+                                                                    <strong>Colors</strong>
+                                                                    <div class="colors">
+                                                                        <div class="c-blue"><span></span></div>
+                                                                        <div class="c-gray"><span></span></div>
+                                                                        <div class="c-purple"><span></span></div>
+                                                                        <div class="c-yellow"><span></span></div>
+                                                                        <div class="c-red"><span></span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="product-back">
+                                                    <div class="shadow"></div>
+                                                    <div class="carousel carousel-v3">
+                                                        <ul class="carousel-container">
+                                                            <li>
+                                                                @if (@item.Image != null)
+                                                                {
+                                                                    <img src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Image))" alt="product" class="img-responsive center-block">
+                                                                }
+                                                                else
+                                                                {
+                                                                    <img src="~/images/product/product.jpg" alt="product" class="img-responsive center-block">
+                                                                }
+                                                            </li>                                                            
+                                                        </ul>                                                        
+                                                    </div>
+                                                    <div class="flip-back">
+                                                        <div class="cy"></div>
+                                                        <div class="cx"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            </div>
+                    </div>
+
+                    @* пагинация *@                   
+                    <div class="toolbar products-bottom-toolbar clearfix">
+                        <page-link page-model="Model.PageViewModel"
+                                   page-action="Index"
+                                   page-classes-enable="true"
+                                   page-class="btn btn-light" page-class-normal="btn-light"
+                                   page-class-selected="btn-light"
+                                   page-url-category="@Model.CurrentCategory"
+                                   page-url-brand="@Model.CurrentBrand"
+                                   class="btn-group pull-right">
+                        </page-link>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - LinenMarket</title>
+
+    
+    <link rel="icon" type="~/image/png" href="~/images/favicon/favicon.png">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/css/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/vendor/normalize.css">
+    <link rel="stylesheet" href="~/css/vendor/animate/animate.css">
+    <link rel="stylesheet" href="~/css/vendor/revolution/revolution.css">
+    <link rel="stylesheet" href="~/css/vendor/revolution/revolution2.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,900,800,700,600,500,300,200,100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" asp-href-include="~/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" asp-href-include="~/fonts/fa/css/font-awesome.min.css">
+
+
+
+    <!-- JS -->
+    <script src="~/js/jquery-1.11.3.min.js" asp-append-version="true"></script>
+    <script src="~/js/vendor/pace/pace.min.js" asp-append-version="true"></script>
+
+</head>
+<body class="home-4">
+    <div id="wrapper">
+        <header id="header" class="site-header header-v4">
+            <div class="container">
+                <div class="main-header">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-4 hidden-hm">
+                            <div class="left-main-header">
+                                <div class="phone">
+                                    <span>Call us 12/5</span>
+                                    <span class="phone-number">+38-000-00-00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-hm-6 col-mb-5">
+                            <div class="logo logo-center">
+                                <img src="~/images/icons/home4/logo_grey_header.svg" alt="Logo">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-hm-6 col-mb-7">
+                            <div class="right-main-header clearfix">
+                                @* количество товаров в корзине *@
+                                <div class="mini-cart">
+                                    
+                                    @*<div class="mini-cart-control">
+                                        <div class="minicart-icon"><i class="icon icon-minicart">iconminicart</i></div>
+
+                                        <div class="minicart-items">*@
+                                            @await Component.InvokeAsync("BasketTotal")                                            
+                                        @*</div>
+                                    </div>*@
+                                    @* всплывающее окно с товарами в корзине *@
+                                    <!--<div class="shop-item">
+                                        <div class="widget_shopping_cart_content">
+                                            <ul class="engo-w-products-list">
+                                                <li class="product-block widget-product clearfix">
+                                                    <div class="image pull-left">
+                                                        <div class="product-image">
+                                                            <figure><img src="~/images/product/product.jpg" alt="product"></figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="caption">
+                                                        <div class="meta">
+                                                            <h3 class="name">
+                                                                <a href="#">American Vintage</a>
+                                                            </h3>
+                                                            <div class="price">
+                                                                <ins><span class="amount">$35</span></ins>
+                                                                <del><span class="amount">$70</span></del>
+                                                            </div>
+                                                            <span class="p-qty">QTY: 01</span>
+
+                                                            <a class="remove" href="#"><i class="fa fa-times-circle"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="product-block widget-product clearfix">
+                                                    <div class="image pull-left">
+                                                        <div class="product-image">
+                                                            <figure><img src="~/images/product/product.jpg" alt="product"></figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="caption">
+                                                        <div class="meta">
+                                                            <h3 class="name">
+                                                                <a href="#">American Vintage</a>
+                                                            </h3>
+                                                            <div class="price">
+                                                                <ins><span class="amount">$35</span></ins>
+                                                                <del><span class="amount">$70</span></del>
+                                                            </div>
+                                                            <span class="p-qty">QTY: 01</span>
+
+                                                            <a class="remove" href="#"><i class="fa fa-times-circle"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="product-block widget-product clearfix">
+                                                    <div class="image pull-left">
+                                                        <div class="product-image">
+                                                            <figure><img src="~/images/product/product.jpg" alt="product"></figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="caption">
+                                                        <div class="meta">
+                                                            <h3 class="name">
+                                                                <a href="#">American Vintage</a>
+                                                            </h3>
+                                                            <div class="price">
+                                                                <ins><span class="amount">$35</span></ins>
+                                                                <del><span class="amount">$70</span></del>
+                                                            </div>
+                                                            <span class="p-qty">QTY: 01</span>
+
+                                                            <a class="remove" href="#"><i class="fa fa-times-circle"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <p class="total"><strong>Subtotal:</strong> <span class="amount">$105.00</span></p>
+                                            <p class="buttons clearfix">
+                                                <a class="button cart-button" href="cart.html">View Cart</a>
+                                                <a class="button dark checkout" href="checkout.html">Checkout</a>
+                                            </p>
+                                        </div>
+                                    </div>-->
+                                </div>
+                                @* список желаний *@
+                                @*<div class="wishlist-header">
+                                        <div class="wishlist-control">
+                                            <a href="#" class="icon icon-wishlist"> <i class="fa fa-heart"></i></a>
+                                        </div>
+                                    </div>*@
+                                @* настройки вход в аккаунт *@
+                                <div class="setting-header">
+                                    <div class="setting-control">                                       
+                                        <a href="#" class="icon icon-setting">Setting</a>
+                                    </div>
+                                    <div class="setting-content">
+                                        @* выбор языка *@
+                                        @*<div class="seclect-language clearfix">
+                                                <h3 class="tittle"><span>Select Language</span></h3>
+                                                <ul class="clearfix">
+                                                    <li class="ensign usa active"><a href="#"><img src="~/images/usa.png" alt=""></a></li>
+                                                    <li class="ensign vn"><a href="#"><img src="~/images/vn.png" alt=""></a></li>
+                                                    <li class="ensign korea"><a href="#"><img src="~/images/korea.png" alt=""></a></li>
+                                                    <li class="ensign japan"><a href="#"><img src="~/images/japan.png" alt=""></a></li>
+                                                </ul>
+                                            </div>*@
+                                        @* выбор валюты *@
+                                        @*<div class="select-currency clearfix">
+                                                <h3 class="tittle"><span>Select Currency</span></h3>
+                                                <ul class="clearfix">
+                                                    <li class="money usd active"><a href="#"><i class="fa fa-dollar"></i></a></li>
+                                                    <li class="money euro"><a href="#"><i class="fa fa-eur"></i></a></li>
+                                                    <li class="money yen"><a href="#"><i class="fa fa-yen"></i></a></li>
+                                                </ul>
+                                            </div>*@
+                                        <div class="select-page">
+                                            <ul>
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li><i class="fa fa-user"></i> <span>@User.Identity.Name</span></li>
+                                                    <li>
+                                                        <form method="post" asp-controller="Account" asp-action="Logout">
+                                                            @* Сделать чтоб можно было с главной делать смену пароля *@
+                                                            @*<a class="btn btn-sm btn-primary" asp-action="ChangePassword" asp-route-id="@User.Identity.Id">Сменить пароль</a>*@
+                                                            <input type="submit" value="Выход" />
+                                                        </form>
+                                                    </li>                                                    
+                                                }
+                                                else
+                                                {
+                                                    <li><a asp-controller="Account" asp-action="Login"><i class="fa fa-unlock-alt"></i> <span>Login</span></a></li>
+                                                    <li><a asp-controller="Account" asp-action="Register"><i class="fa fa-user"></i> <span>Register</span></a></li>
+                                                }                                             
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-header header-sv2 engoj-sticky-header engoc-sticky-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-11 col-sm-10 col-xs-10 col-mb-10">
+                            <div class="menu-mb visible-sm visible-md hidden-lg visible-xs">
+                                <a href="#" class="menu">
+                                    <span class="icon-bar"></span>
+                                </a>
+                            </div>
+                            <div id="engo-mainmenu" class="engo-mainmenu engo-horizontal-megamenu">
+                                <nav class="megamenu">
+                                    <ul id="primary-menu" class="lever-01">
+                                        <li class="lever-01"><a asp-area="" asp-controller="Home" asp-action="Index"><span>Home</span></a></li>
+                                        <li class="lever-01"><a asp-area="" asp-controller="Shop" asp-action="Index"><span>Shop</span></a></li>
+                                        <li class="lever-01"><a asp-area="" asp-controller="Blog" asp-action="Index"><span>News</span></a></li>
+                                        <li class="lever-01"><a asp-area="" asp-controller="Home" asp-action="About"><span>About US</span></a></li>
+                                        <li class="lever-01"><a asp-area="" asp-controller="Contact" asp-action="Index"><span>Contact US</span></a></li>
+                                        <li class="lever-01"><a asp-area="" asp-controller="Home" asp-action="FAQ"><span>FAQ</span></a></li>                                        
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        @*<div class="col-md-1 col-sm-2 col-xs-2 col-mb-2">
+                            <div class="search-container">
+                                <div class="search-box search-box-v2">
+                                    <form class="input-group main-search">
+                                        <input type="text" class="input-text text-search" placeholder="Search and hit enter...">
+                                        <button class="btn search-btn"><i class="icon"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </header>
+        @* ============================================================== *@
+        @RenderBody()
+        @* ============================================================== *@
+        <footer id="engo-footer" class="engo-footer footer-v4">
+            <div id="map" class="map map-footer">
+                <div id="map-canvas"> </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <ul class="social col-xs-7 col-hm-12">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#"> TWITTER</a></li>
+                        <li><a href="#">DRIBBBLE</a></li>
+                        <li><a href="#">VIMEO</a></li>
+                        <li><a href="#">BEHANCE</a></li>
+                        <li><a href="#">RSS FEEDS</a></li>
+                    </ul>
+                    <div class="payment-footer col-xs-5 col-hm-12">
+                        <img src="images/home2/payment-footer.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="totoplink"><a href="#top"><i class="fa fa-long-arrow-up"></i></a></div>
+    </div>
+    <script src="~/js/vendor/bootstrap/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/js/vendor/wow/wow.js" asp-append-version="true"></script>
+    <script src="~/js/vendor/countdown/countdown.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.20&sensor=false"></script>
+    <script src="~/js/vendor/map/map.js" asp-append-version="true"></script>
+    <script src="~/js/vendor/jquery-ui.min.js" asp-append-version="true"></script>
+    <script src="~/js/vendor/product.js" asp-append-version="true"></script>
+    <script src="~/js/vendor/revslider/jquery.themepunch.plugins.min.js" asp-append-version="true"></script>
+    <script src="~/js/vendor/revslider/jquery.themepunch.revolution.min.js" asp-append-version="true"></script>
+    <script src="~/js/vendor/revslider/revcontrol.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @*<script>
+        (function ($) {
+            "use strict";
+            new WOW().init();
+        })(jQuery);
+    </script>*@
+</body>
+</html>

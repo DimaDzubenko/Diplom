@@ -1,0 +1,163 @@
+/**
+
+ Theme Name: Quato - Multi Store Responsive HTML Template
+
+ Theme URI: http://engotheme.com/
+
+ Author: Engo Team
+
+ Author URI: http://engotheme.com/
+
+ Description: Engo Quato HTML Template
+
+ Version: 1.0
+
+ License: GNU General Public License v1 or later
+
+ Tags: two-columns, left-sidebar, fixed-layout, responsive-layout
+
+ Text Domain: Engotheme
+
+ **/
+
+/*	################################################################
+
+    1. MIXIN
+	2. GENERAL
+	3. ELEMENTS
+        3.1 header
+        3.2 Menu
+            3.2.1 Menu Vertical
+        3.3 End Breadscrumb
+        3.4 Toolbar
+        3.5  Sidebar
+        3.6 Tabs
+        3.7 Popup
+            3.7.1 Popup v1
+            3.7.2 Popup v2
+        3.8 To top link
+	4. HEADER
+		4.1 HEADER V4
+		4.2 HEADER V3
+		4.3 HEADER V2
+		4.4 HEADER V1
+	5. FOOTER
+	    5.1 FOOTER V1
+	    5.2 FOOTER V2
+	    5.3 FOOTER V3
+	    5.4 FOOTER V4
+	6. Blog
+	    6.1 Blog v1
+        6.2 Page Post
+	7. SHOP
+	    7.1 Product
+	    7.2 Product-list
+	    7.3 Grid-v2
+	    7.4 Grid-v3
+	    7.5 Product details
+	    7.6 Shopping Cart
+	    7.7 Check out
+	    7.8 Wishlist
+	    7.9 Track order
+	8. Page
+	    8.1 Page Contact
+	    8.2 LogIn
+	    8.3 404 page
+	    8.4 FAQS
+        8.5 About
+	9. Home
+	    9.1 Home - version 4
+	    9.2 Home - version 3
+	    9.3 Home - version 2
+	    9.4 Home - version 1
+	10. Revolution
+	11. Testimonial
+    12. Responsive
+        12.1 Product
+            12.1.1 Grid v1
+            12.1.2 Product-Grid v2
+            12.1.3 Product-List
+        12.2 Menu Responsive
+            12.2.1 menu-v4
+            12.2.2 menu-v1
+            12.2.3 menu-v2
+            12.2.4 menu-v3
+        12.3 Home
+            12.3.1 home 4
+            12.3.2 Home1
+            12.3.3 Home2
+            12.3.4 Home3
+        12.4 Header
+            12.4.1 header-v4
+            12.4.2 Header-v2
+            12.4.3 header-v1
+            12.4.4 header-v3
+        12.5 Footer
+            12.5.1 footer-v4
+            12.5.2 footer-v3
+            12.5.3 footer-v2
+            12.5.4 Footer -v1
+        12.6 PAGE
+            12.6.1 page-Product-Detail
+            12.6.2 page-404
+            12.6.3 page-about
+            12.6.4 page-Blog
+            12.6.5 site-check-out
+            12.6.6 site-shopping-cart
+            12.6.7 site-wishlist
+            12.6.8 page-Contact-us
+            12.6.9 page-FAQS
+            12.6.10 page-Login
+            12.6.11 Track oder
+
+################################################################# */
+
+/*  1. MIXIN */
+@import "../scss/mixin";
+/*  1. End MIXIN  */
+
+
+/*  2. GENERAL  */
+@import "../scss/general";
+/*  2. End GENERAL  */
+
+/*  3. ELEMENTS  */
+@import "scss/elements";
+/*  3. End ELEMENTS  */
+
+/*  4. HEADER  */
+@import "../scss/header";
+/*  4. End HEADER  */
+
+/*  5. FOOTER  */
+@import "../scss/footer";
+/*  5 End FOOTER  */
+
+/*  6. Blog  */
+@import "../scss/blog/blog";
+/*  6. END Blog  */
+
+/*  7. SHOP  */
+@import "../scss/shop/shop";
+/*  7. End SHOP  */
+
+/* 8. Page */
+@import "../scss/page";
+/* 8. END Page */
+
+/*  9. Home  */
+@import "../scss/home";
+/*   9. End Home  */
+
+/*  10. Revolution  */
+@import "../css/vendor/revolution/rev";
+/*  10. End Revolution  */
+
+/*  11. Testimonial  */
+@import "../scss/testimonial";
+/*  11.  End Testimonial  */
+
+/*
+* 12. Responsive
+*/
+@import "../scss/responsive";

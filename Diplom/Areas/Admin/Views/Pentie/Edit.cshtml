@@ -1,0 +1,63 @@
+﻿@model Diplom.Models.ViewModels.Shop.Pentie.PentieViewModel
+
+@{
+    ViewData["Title"] = "Edit product information";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <div id="sorry-background" class="box info-bar main-boxshadow text-center" data-animate="fadeInUpBig">
+            @if (ViewBag.Image != null)
+            {
+                <div>
+                    <img class="img-responsive img-rounded center-block" src="data:image/jpeg;base64,@(Convert.ToBase64String(ViewBag.Image))" style="height: 200px" />
+                </div>
+            }
+            else
+            {
+                <img src="~/images/product/product.jpg" alt="" class="img-responsive center-block" style="height: 200px">
+            }
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    @*<label asp-for="Name" class="control-label"></label>*@
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="Price" class="control-label"></label>*@
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="Description" class="control-label"></label>*@
+                    <textarea asp-for="Discription" class="form-control"></textarea>
+                    <span asp-validation-for="Discription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <select asp-for="PCategoryId" class="form-control" asp-items="ViewBag.Categories"></select>
+                    <span asp-validation-for="PCategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <select asp-for="PBrandId" class="form-control" asp-items="ViewBag.Brands"></select>
+                    <span asp-validation-for="PBrandId" class="text-danger"></span>
+                </div>                
+                <div class="form-group text-center">
+                    <div id="upload_button">
+                        <label>
+                            <input name="Image" type="file" class="form-control">
+                            @*<span class="btn btn-primary">Add new image for product</span>*@
+                        </label>
+                    </div>
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    <a asp-action="Index" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+

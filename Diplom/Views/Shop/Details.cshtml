@@ -1,0 +1,1024 @@
+﻿@model Diplom.Models.ViewModels.Shop.Pentie.PentieViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutSecond.cshtml";
+    ViewData["Title"] = "Details";
+}
+<section id="main" class="site-main shop-grid-full">
+    <div class="engo-breadscrumb overlayo">
+        <div class="container">
+            <div class="row">
+                <ol class="breadcrumb ">
+                    <li class="home"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li>
+                        <a asp-controller="Shop" asp-action="Index">Shop</a>
+                    </li>
+                    <li>@Model.Name</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="product-details" class="product-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-lg-5 col-sm-6">
+                    <div class="images-product">
+                        <img id="zoom_01" src="images/product/product.jpg" data-zoom-image="images/product/product.jpg" alt="">
+                        <div class="thumb-product">
+                            @if (ViewBag.Image != null)
+                            {
+                                <img src="data:image/jpeg;base64,@(Convert.ToBase64String(ViewBag.Image))" alt="product" class="img-responsive center-block">
+                            }
+                            else
+                            {
+                                <img src="~images/product/product.jpg" alt="product" class="img-responsive center-block">
+                            }
+
+
+                            @*<div id="gallery" class="swiper-container gallery-01">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide img-thumb" data-image="images/product/product.jpg" data-zoom-image="images/product/product.jpg">
+                    <img src="images/product/product.jpg" alt="">
+                </div>
+                <div class="swiper-slide img-thumb" data-image="images/product/product.jpg" data-zoom-image="images/product/product.jpg">
+                    <img src="images/product/product.jpg" alt="">
+                </div>
+                <div class="swiper-slide img-thumb" data-image="images/product/product.jpg" data-zoom-image="images/product/product.jpg">
+                    <img src="images/product/product.jpg" alt="">
+                </div>
+                <div class="swiper-slide img-thumb" data-image="images/product/product.jpg" data-zoom-image="images/product/product.jpg">
+                    <img src="images/product/product.jpg" alt="">
+                </div>
+                <div class="swiper-slide img-thumb" data-image="images/product/product.jpg" data-zoom-image="images/product/product.jpg">
+                    <img src="images/product/product.jpg" alt="">
+                </div>
+                <div class="swiper-slide img-thumb" data-image="images/product/product.jpg" data-zoom-image="images/product/product.jpg">
+                    <img src="images/product/product.jpg" alt="">
+                </div>
+                <div class="swiper-slide img-thumb" data-image="images/product/product.jpg" data-zoom-image="images/product/product.jpg">
+                    <img src="images/product/product.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="arrow-swiper button-prev"><i class="fa fa-angle-left"></i></div>
+        <div class="arrow-swiper button-next"><i class="fa fa-angle-right"></i></div>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-6">
+                    <div class="summary clearfix">
+                        <h2 class="product-name"><a href="#">@Model.Name</a></h2>
+                        @*<div class="rating">
+            <div class="star-rating">
+                <span style="width:80%"></span>
+            </div>
+        </div>*@
+                        @*<div class="vote">(243 Reviews)</div>*@
+                        <div class="price">
+                            <ins><span class="amount">@Model.Price UAH</span></ins>
+                            @*<del><span class="amount">$75.00</span></del>*@
+                        </div>
+                        <div class="des">
+                            <p>@Model.Discription</p>
+                        </div>
+                        @*<div class="product-options">
+            <div class="sizes-product">
+                <strong>Sizes :</strong>
+                <a href="#"><span>XS </span></a>
+                <a href="#"><span>S </span></a>
+                <a href="#"><span>M </span></a>
+                <a href="#"><span>L </span></a>
+                <a href="#"><span>XL </span></a>
+            </div>
+            <div class="scolor-product">
+                <strong>Colors :</strong>
+                <div class="colors">
+                    <div class="c-blue"><span></span></div>
+                    <div class="c-gray"><span></span></div>
+                    <div class="c-purple"><span></span></div>
+                    <div class="c-yellow"><span></span></div>
+                    <div class="c-red"><span></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="quantity">
+            <label>Quantity :</label>
+            <div class="minus qt"><i class="fa fa-minus"></i></div>
+            <input step="1" min="0" value="1" title="Qty" class="qty" size="4" type="number">
+            <div class="qt plus"><i class="fa fa-plus"></i></div>
+        </div>*@
+                        <div class="social social-product clearfix">
+                            <div class="label-social">SHARE THIS :</div>
+                            <ul>
+                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                        @using (Html.BeginForm("AddToBasket", "Cart"))
+                        {
+                            <div class="buttons clearfix">
+                                <input type="hidden" name="itemId" value="@Model.PentieId" />
+                                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                                <div class="add-cart">
+                                    <button style="margin:5px;" class="btn btn-warning btn-small" type="submit">@*<i class="fa fa-shopping-cart"></i>*@  Add to cart</button>
+                                </div>
+
+                                @*<a class="button cart-button" href="#"><span>Add to cart</span></a>*@
+
+                                @*<a class="button wishlist" href="#"><span>Add to wishlist</span></a>*@
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            @*<div class="tabs-container">
+                <ul class="tabs clearfix">
+                    <li><a href="#tab-description">Description</a></li>
+                    <li><a href="#tab-reviews" class="">Reviews (03)</a></li>
+                    <li><a href="#tab-add_tags" class="">Add Tags</a></li>
+                </ul>
+
+                <div id="tab-description" class="tab-content tab-des clearfix">
+                    <h3>In a free hour, when our power of choice</h3>
+                    <p>This is a custom CMS block. You can use it to display information about shipping, returns, refunds, latest promotions etc. Put any content you want here, like text, HTML, images or videos. There are many useful blocks like this one across the theme. All CMS blocks are editable from the admin panel. You can delete block static Custom Tab if you want.</p>
+                    <p><span>Shipping:</span> Please allow about 5-10 business days for delivery. For delivery to Alaska or Hawaii, please allow 10-15 days for delivery. For delivery to PO Boxes in Alaska, Hawaii, US Territories and APO/FPO addresses, allow three weeks for delivery.</p>
+                    <p><span>Backorders:</span> All backordered items will be shipped via Standard Delivery service at no additional charge.</p>
+                    <p><span>Returns Policy:</span> You may return new, unworn or unused products within thirty (30) days of delivery for a full refund of the cost of the goods, or an exchange if</p>
+                </div>
+                <div id="tab-reviews" class="tab-content tab-rev clearfix">
+                    <div class="review-content">
+                        <ul class="review">
+                            <li>
+                                <div class="images"><img src="images/review/avatar.jpg" alt=""></div>
+                                <h3 class="name"><span>MICHAEL VANCE</span></h3>
+                                <div class="rating">
+                                    <div class="star-rating">
+                                        <span style="width:80%"></span>
+                                    </div>
+                                </div>
+                                <div class="des-rev">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</div>
+                                <div class="time">03 Min Ago</div>
+                            </li>
+                            <li>
+                                <div class="images"><img src="images/review/avatar.jpg" alt=""></div>
+                                <h3 class="name"><span>Rocky</span></h3>
+                                <div class="rating">
+                                    <div class="star-rating">
+                                        <span style="width:80%"></span>
+                                    </div>
+                                </div>
+                                <div class="des-rev">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</div>
+                                <div class="time">03 Min Ago</div>
+                            </li>
+                            <li>
+                                <div class="images"><img src="images/review/avatar.jpg" alt=""></div>
+                                <h3 class="name"><span>Philip</span></h3>
+                                <div class="rating">
+                                    <div class="star-rating">
+                                        <span style="width:80%"></span>
+                                    </div>
+                                </div>
+                                <div class="des-rev">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</div>
+                                <div class="time">03 Min Ago</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-review">
+                        <h3 class="form-rev">
+                            <span>Here you can review this item</span>
+                        </h3>
+                        <form class="comment-form" id="commentform" method="post" action="#">
+                            <input type="text" size="30" value="" placeholder="Your Name *" name="author" id="author">
+                            <input type="text" size="30" value="" placeholder="Your Email *" name="email" id="email">
+                            <textarea aria-required="true" rows="4" cols="45" placeholder="Message *" name="comment" id="comment"></textarea>
+                        </form>
+                        <div class="submit">
+                            <div class="rating-rev">
+                                <div class="rating-star">
+                                    <input type="radio" name="star-horizontal-rating" id="star-horizontal-rating-1">
+                                    <label for="star-horizontal-rating-1"><i class="fa fa-star"></i></label>
+                                    <input type="radio" name="star-horizontal-rating" id="star-horizontal-rating-2">
+                                    <label for="star-horizontal-rating-2"><i class="fa fa-star"></i></label>
+                                    <input type="radio" name="star-horizontal-rating" id="star-horizontal-rating-3">
+                                    <label for="star-horizontal-rating-3"><i class="fa fa-star"></i></label>
+                                    <input type="radio" name="star-horizontal-rating" id="star-horizontal-rating-4">
+                                    <label for="star-horizontal-rating-4"><i class="fa fa-star"></i></label>
+                                    <input type="radio" name="star-horizontal-rating" id="star-horizontal-rating-5">
+                                    <label for="star-horizontal-rating-5"><i class="fa fa-star"></i></label>
+                                </div>
+                            </div>
+                            <div class="subreview"><a href="#"><span>ADD REVIEW</span></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-add_tags" class="tab-content add-tags clearfix">
+                    <h3 class="addtag"><span>Add Your Tags</span></h3>
+
+                    <form method="post" action="#">
+                        <input type="text" value="" placeholder="Your tags here">
+                        <div class="add-tags"><a href="#"><span>Add Tags</span></a></div>
+                        <p>Use spaces to separate tags. Use single quotes (') for phrases.</p>
+                    </form>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</section>
+
+
+@*<section id="relatedproducts" class="relatedproducts">
+    <div class="container">
+        <div class="title-related"><h3 class="title"><span>Related Products</span></h3></div>
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-6 col-hm-6 col-mb-12">
+                <div class="shadow-product wow fadeInUp  " data-wow-duration="0.5s" data-wow-delay="0.3s">
+                    <div class="product engo-product-grid">
+                        <div class="make3D">
+                            <div class="product-front">
+                                <div class="shadow"></div>
+                                <div class="image">
+                                    <div class="product-image hover-product">
+                                        <figure><img src="images/product/product.jpg" alt="product"></figure>
+                                    </div>
+                                    <div class="wishlist">
+                                        <div class="btn btn-wishlist">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart-o"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="button-action">
+                                        <div class="add-cart">
+                                            <a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                <i class="icon-cart">add to cart</i>
+                                            </a>
+                                        </div>
+                                        <div class="gallery">
+                                            <a href="#" class="view_gallery" data-toggle="tooltip" title="Quick View">
+                                                <i class="icon-quick-view">quick view</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_overlay"></div>
+                                <div class="caption">
+                                    <div class="meta">
+                                        <h3 class="name">
+                                            <a href="#">American Vintage</a>
+                                        </h3>
+                                        <div class="rating">
+                                            <div class="star-rating">
+                                                <span style="width:80%"></span>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <del><span class="amount">$70</span></del>
+                                            <ins><span class="amount">$35</span></ins>
+                                        </div>
+
+                                        <div class="product-options">
+                                            <div class="sizes-product">
+                                                <strong>Sizes</strong>
+                                                <a href="#"><span>XS, </span></a>
+                                                <a href="#"><span>S, </span></a>
+                                                <a href="#"><span>M, </span></a>
+                                                <a href="#"><span>L, </span></a>
+                                                <a href="#"><span>XL, </span></a>
+                                                <a href="#"><span>XXL</span></a>
+                                            </div>
+                                            <div class="scolor-product">
+                                                <strong>Colors</strong>
+                                                <div class="colors">
+                                                    <div class="c-blue"><span></span></div>
+                                                    <div class="c-gray"><span></span></div>
+                                                    <div class="c-purple"><span></span></div>
+                                                    <div class="c-yellow"><span></span></div>
+                                                    <div class="c-red"><span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-back">
+                                <div class="shadow"></div>
+                                <div class="carousel carousel-v3">
+                                    <ul class="carousel-container">
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                    </ul>
+                                    <div class="control-arrow">
+                                        <div class="arrowPrev">
+                                            <i class="fa fa-angle-right"></i>
+                                        </div>
+                                        <div class="arrowNext">
+                                            <i class="fa fa-angle-left"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-back">
+                                    <div class="cy"></div>
+                                    <div class="cx"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="hot">Hot</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-6 col-hm-6 col-mb-12">
+                <div class="shadow-product wow fadeInUp  " data-wow-duration="0.5s" data-wow-delay="0.6s">
+                    <div class="product engo-product-grid">
+                        <div class="make3D">
+                            <div class="product-front">
+                                <div class="shadow"></div>
+                                <div class="image">
+                                    <div class="product-image hover-product">
+                                        <figure><img src="images/product/product.jpg" alt="product"></figure>
+                                    </div>
+                                    <div class="wishlist">
+                                        <div class="btn btn-wishlist">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart-o"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="button-action">
+                                        <div class="add-cart">
+                                            <a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                <i class="icon-cart">add to cart</i>
+                                            </a>
+                                        </div>
+                                        <div class="gallery">
+                                            <a href="#" class="view_gallery" data-toggle="tooltip" title="Quick View">
+                                                <i class="icon-quick-view">quick view</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_overlay"></div>
+                                <div class="caption">
+                                    <div class="meta">
+                                        <h3 class="name">
+                                            <a href="#">American Vintage</a>
+                                        </h3>
+                                        <div class="rating">
+                                            <div class="star-rating">
+                                                <span style="width:80%"></span>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <del><span class="amount">$70</span></del>
+                                            <ins><span class="amount">$35</span></ins>
+                                        </div>
+
+                                        <div class="product-options">
+                                            <div class="sizes-product">
+                                                <strong>Sizes</strong>
+                                                <a href="#"><span>XS, </span></a>
+                                                <a href="#"><span>S, </span></a>
+                                                <a href="#"><span>M, </span></a>
+                                                <a href="#"><span>L, </span></a>
+                                                <a href="#"><span>XL, </span></a>
+                                                <a href="#"><span>XXL</span></a>
+                                            </div>
+                                            <div class="scolor-product">
+                                                <strong>Colors</strong>
+                                                <div class="colors">
+                                                    <div class="c-blue"><span></span></div>
+                                                    <div class="c-gray"><span></span></div>
+                                                    <div class="c-purple"><span></span></div>
+                                                    <div class="c-yellow"><span></span></div>
+                                                    <div class="c-red"><span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-back">
+                                <div class="shadow"></div>
+                                <div class="carousel carousel-v3">
+                                    <ul class="carousel-container">
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                    </ul>
+                                    <div class="control-arrow">
+                                        <div class="arrowPrev">
+                                            <i class="fa fa-angle-right"></i>
+                                        </div>
+                                        <div class="arrowNext">
+                                            <i class="fa fa-angle-left"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-back">
+                                    <div class="cy"></div>
+                                    <div class="cx"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-6 col-hm-6 col-mb-12">
+                <div class="shadow-product wow fadeInUp  " data-wow-duration="0.5s" data-wow-delay="0.9s">
+                    <div class="product engo-product-grid">
+                        <div class="make3D">
+                            <div class="product-front">
+                                <div class="shadow"></div>
+                                <div class="image">
+                                    <div class="product-image hover-product">
+                                        <figure><img src="images/product/product.jpg" alt="product"></figure>
+                                    </div>
+                                    <div class="wishlist">
+                                        <div class="btn btn-wishlist">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart-o"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="button-action">
+                                        <div class="add-cart">
+                                            <a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                <i class="icon-cart">add to cart</i>
+                                            </a>
+                                        </div>
+                                        <div class="gallery">
+                                            <a href="#" class="view_gallery" data-toggle="tooltip" title="Quick View">
+                                                <i class="icon-quick-view">quick view</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_overlay"></div>
+                                <div class="caption">
+                                    <div class="meta">
+                                        <h3 class="name">
+                                            <a href="#">American Vintage</a>
+                                        </h3>
+                                        <div class="rating">
+                                            <div class="star-rating">
+                                                <span style="width:80%"></span>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <del><span class="amount">$70</span></del>
+                                            <ins><span class="amount">$35</span></ins>
+                                        </div>
+
+                                        <div class="product-options">
+                                            <div class="sizes-product">
+                                                <strong>Sizes</strong>
+                                                <a href="#"><span>XS, </span></a>
+                                                <a href="#"><span>S, </span></a>
+                                                <a href="#"><span>M, </span></a>
+                                                <a href="#"><span>L, </span></a>
+                                                <a href="#"><span>XL, </span></a>
+                                                <a href="#"><span>XXL</span></a>
+                                            </div>
+                                            <div class="scolor-product">
+                                                <strong>Colors</strong>
+                                                <div class="colors">
+                                                    <div class="c-blue"><span></span></div>
+                                                    <div class="c-gray"><span></span></div>
+                                                    <div class="c-purple"><span></span></div>
+                                                    <div class="c-yellow"><span></span></div>
+                                                    <div class="c-red"><span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-back">
+                                <div class="shadow"></div>
+                                <div class="carousel carousel-v3">
+                                    <ul class="carousel-container">
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                    </ul>
+                                    <div class="control-arrow">
+                                        <div class="arrowPrev">
+                                            <i class="fa fa-angle-right"></i>
+                                        </div>
+                                        <div class="arrowNext">
+                                            <i class="fa fa-angle-left"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-back">
+                                    <div class="cy"></div>
+                                    <div class="cx"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="new">New</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-6 col-hm-6 col-mb-12">
+                <div class="shadow-product wow fadeInUp  " data-wow-duration="0.5s" data-wow-delay="1.2s">
+                    <div class="product engo-product-grid">
+                        <div class="make3D">
+                            <div class="product-front">
+                                <div class="shadow"></div>
+                                <div class="image">
+                                    <div class="product-image hover-product">
+                                        <figure><img src="images/product/product.jpg" alt="product"></figure>
+                                    </div>
+                                    <div class="wishlist">
+                                        <div class="btn btn-wishlist">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart-o"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="button-action">
+                                        <div class="add-cart">
+                                            <a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                <i class="icon-cart">add to cart</i>
+                                            </a>
+                                        </div>
+                                        <div class="gallery">
+                                            <a href="#" class="view_gallery" data-toggle="tooltip" title="Quick View">
+                                                <i class="icon-quick-view">quick view</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_overlay"></div>
+                                <div class="caption">
+                                    <div class="meta">
+                                        <h3 class="name">
+                                            <a href="#">American Vintage</a>
+                                        </h3>
+                                        <div class="rating">
+                                            <div class="star-rating">
+                                                <span style="width:80%"></span>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <del><span class="amount">$70</span></del>
+                                            <ins><span class="amount">$35</span></ins>
+                                        </div>
+
+                                        <div class="product-options">
+                                            <div class="sizes-product">
+                                                <strong>Sizes</strong>
+                                                <a href="#"><span>XS, </span></a>
+                                                <a href="#"><span>S, </span></a>
+                                                <a href="#"><span>M, </span></a>
+                                                <a href="#"><span>L, </span></a>
+                                                <a href="#"><span>XL, </span></a>
+                                                <a href="#"><span>XXL</span></a>
+                                            </div>
+                                            <div class="scolor-product">
+                                                <strong>Colors</strong>
+                                                <div class="colors">
+                                                    <div class="c-blue"><span></span></div>
+                                                    <div class="c-gray"><span></span></div>
+                                                    <div class="c-purple"><span></span></div>
+                                                    <div class="c-yellow"><span></span></div>
+                                                    <div class="c-red"><span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-back">
+                                <div class="shadow"></div>
+                                <div class="carousel carousel-v3">
+                                    <ul class="carousel-container">
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                    </ul>
+                                    <div class="control-arrow">
+                                        <div class="arrowPrev">
+                                            <i class="fa fa-angle-right"></i>
+                                        </div>
+                                        <div class="arrowNext">
+                                            <i class="fa fa-angle-left"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-back">
+                                    <div class="cy"></div>
+                                    <div class="cx"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-6 col-hm-6 col-mb-12">
+                <div class="shadow-product wow fadeInUp  " data-wow-duration="0.5s" data-wow-delay="1.5s">
+                    <div class="product engo-product-grid">
+                        <div class="make3D">
+                            <div class="product-front">
+                                <div class="shadow"></div>
+                                <div class="image">
+                                    <div class="product-image hover-product">
+                                        <figure><img src="images/product/product.jpg" alt="product"></figure>
+                                    </div>
+                                    <div class="wishlist">
+                                        <div class="btn btn-wishlist">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart-o"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="button-action">
+                                        <div class="add-cart">
+                                            <a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                <i class="icon-cart">add to cart</i>
+                                            </a>
+                                        </div>
+                                        <div class="gallery">
+                                            <a href="#" class="view_gallery" data-toggle="tooltip" title="Quick View">
+                                                <i class="icon-quick-view">quick view</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_overlay"></div>
+                                <div class="caption">
+                                    <div class="meta">
+                                        <h3 class="name">
+                                            <a href="#">American Vintage</a>
+                                        </h3>
+                                        <div class="rating">
+                                            <div class="star-rating">
+                                                <span style="width:80%"></span>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <del><span class="amount">$70</span></del>
+                                            <ins><span class="amount">$35</span></ins>
+                                        </div>
+
+                                        <div class="product-options">
+                                            <div class="sizes-product">
+                                                <strong>Sizes</strong>
+                                                <a href="#"><span>XS, </span></a>
+                                                <a href="#"><span>S, </span></a>
+                                                <a href="#"><span>M, </span></a>
+                                                <a href="#"><span>L, </span></a>
+                                                <a href="#"><span>XL, </span></a>
+                                                <a href="#"><span>XXL</span></a>
+                                            </div>
+                                            <div class="scolor-product">
+                                                <strong>Colors</strong>
+                                                <div class="colors">
+                                                    <div class="c-blue"><span></span></div>
+                                                    <div class="c-gray"><span></span></div>
+                                                    <div class="c-purple"><span></span></div>
+                                                    <div class="c-yellow"><span></span></div>
+                                                    <div class="c-red"><span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-back">
+                                <div class="shadow"></div>
+                                <div class="carousel carousel-v3">
+                                    <ul class="carousel-container">
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                    </ul>
+                                    <div class="control-arrow">
+                                        <div class="arrowPrev">
+                                            <i class="fa fa-angle-right"></i>
+                                        </div>
+                                        <div class="arrowNext">
+                                            <i class="fa fa-angle-left"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-back">
+                                    <div class="cy"></div>
+                                    <div class="cx"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-6 col-hm-6 col-mb-12">
+                <div class="shadow-product wow fadeInUp  " data-wow-duration="0.5s" data-wow-delay="1.8s">
+                    <div class="product engo-product-grid">
+                        <div class="make3D">
+                            <div class="product-front">
+                                <div class="shadow"></div>
+                                <div class="image">
+                                    <div class="product-image hover-product">
+                                        <figure><img src="images/product/product.jpg" alt="product"></figure>
+                                    </div>
+                                    <div class="wishlist">
+                                        <div class="btn btn-wishlist">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart-o"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="button-action">
+                                        <div class="add-cart">
+                                            <a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                <i class="icon-cart">add to cart</i>
+                                            </a>
+                                        </div>
+                                        <div class="gallery">
+                                            <a href="#" class="view_gallery" data-toggle="tooltip" title="Quick View">
+                                                <i class="icon-quick-view">quick view</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_overlay"></div>
+                                <div class="caption">
+                                    <div class="meta">
+                                        <h3 class="name">
+                                            <a href="#">American Vintage</a>
+                                        </h3>
+                                        <div class="rating">
+                                            <div class="star-rating">
+                                                <span style="width:80%"></span>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <del><span class="amount">$70</span></del>
+                                            <ins><span class="amount">$35</span></ins>
+                                        </div>
+
+                                        <div class="product-options">
+                                            <div class="sizes-product">
+                                                <strong>Sizes</strong>
+                                                <a href="#"><span>XS, </span></a>
+                                                <a href="#"><span>S, </span></a>
+                                                <a href="#"><span>M, </span></a>
+                                                <a href="#"><span>L, </span></a>
+                                                <a href="#"><span>XL, </span></a>
+                                                <a href="#"><span>XXL</span></a>
+                                            </div>
+                                            <div class="scolor-product">
+                                                <strong>Colors</strong>
+                                                <div class="colors">
+                                                    <div class="c-blue"><span></span></div>
+                                                    <div class="c-gray"><span></span></div>
+                                                    <div class="c-purple"><span></span></div>
+                                                    <div class="c-yellow"><span></span></div>
+                                                    <div class="c-red"><span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-back">
+                                <div class="shadow"></div>
+                                <div class="carousel carousel-v3">
+                                    <ul class="carousel-container">
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                    </ul>
+                                    <div class="control-arrow">
+                                        <div class="arrowPrev">
+                                            <i class="fa fa-angle-right"></i>
+                                        </div>
+                                        <div class="arrowNext">
+                                            <i class="fa fa-angle-left"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-back">
+                                    <div class="cy"></div>
+                                    <div class="cx"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 hidden-sm col-xs-6 col-hm-6 col-mb-12">
+                <div class="shadow-product wow fadeInUp  " data-wow-duration="0.5s" data-wow-delay="2.1s">
+                    <div class="product engo-product-grid">
+                        <div class="make3D">
+                            <div class="product-front">
+                                <div class="shadow"></div>
+                                <div class="image">
+                                    <div class="product-image hover-product">
+                                        <figure><img src="images/product/product.jpg" alt="product"></figure>
+                                    </div>
+                                    <div class="wishlist">
+                                        <div class="btn btn-wishlist">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart-o"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="button-action">
+                                        <div class="add-cart">
+                                            <a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                <i class="icon-cart">add to cart</i>
+                                            </a>
+                                        </div>
+                                        <div class="gallery">
+                                            <a href="#" class="view_gallery" data-toggle="tooltip" title="Quick View">
+                                                <i class="icon-quick-view">quick view</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_overlay"></div>
+                                <div class="caption">
+                                    <div class="meta">
+                                        <h3 class="name">
+                                            <a href="#">American Vintage</a>
+                                        </h3>
+                                        <div class="rating">
+                                            <div class="star-rating">
+                                                <span style="width:80%"></span>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <del><span class="amount">$70</span></del>
+                                            <ins><span class="amount">$35</span></ins>
+                                        </div>
+
+                                        <div class="product-options">
+                                            <div class="sizes-product">
+                                                <strong>Sizes</strong>
+                                                <a href="#"><span>XS, </span></a>
+                                                <a href="#"><span>S, </span></a>
+                                                <a href="#"><span>M, </span></a>
+                                                <a href="#"><span>L, </span></a>
+                                                <a href="#"><span>XL, </span></a>
+                                                <a href="#"><span>XXL</span></a>
+                                            </div>
+                                            <div class="scolor-product">
+                                                <strong>Colors</strong>
+                                                <div class="colors">
+                                                    <div class="c-blue"><span></span></div>
+                                                    <div class="c-gray"><span></span></div>
+                                                    <div class="c-purple"><span></span></div>
+                                                    <div class="c-yellow"><span></span></div>
+                                                    <div class="c-red"><span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-back">
+                                <div class="shadow"></div>
+                                <div class="carousel carousel-v3">
+                                    <ul class="carousel-container">
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                    </ul>
+                                    <div class="control-arrow">
+                                        <div class="arrowPrev">
+                                            <i class="fa fa-angle-right"></i>
+                                        </div>
+                                        <div class="arrowNext">
+                                            <i class="fa fa-angle-left"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-back">
+                                    <div class="cy"></div>
+                                    <div class="cx"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3 hidden-sm col-xs-6 col-hm-6 col-mb-12">
+                <div class="shadow-product wow fadeInUp  " data-wow-duration="0.5s" data-wow-delay="2.4s">
+                    <div class="product engo-product-grid">
+                        <div class="make3D">
+                            <div class="product-front">
+                                <div class="shadow"></div>
+                                <div class="image">
+                                    <div class="product-image hover-product">
+                                        <figure><img src="images/product/product.jpg" alt="product"></figure>
+                                    </div>
+                                    <div class="wishlist">
+                                        <div class="btn btn-wishlist">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart-o"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="button-action">
+                                        <div class="add-cart">
+                                            <a href="#" class="add_to_cart" data-toggle="tooltip" title="Add To Cart">
+                                                <i class="icon-cart">add to cart</i>
+                                            </a>
+                                        </div>
+                                        <div class="gallery">
+                                            <a href="#" class="view_gallery" data-toggle="tooltip" title="Quick View">
+                                                <i class="icon-quick-view">quick view</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_overlay"></div>
+                                <div class="caption">
+                                    <div class="meta">
+                                        <h3 class="name">
+                                            <a href="#">American Vintage</a>
+                                        </h3>
+                                        <div class="rating">
+                                            <div class="star-rating">
+                                                <span style="width:80%"></span>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <del><span class="amount">$70</span></del>
+                                            <ins><span class="amount">$35</span></ins>
+                                        </div>
+
+                                        <div class="product-options">
+                                            <div class="sizes-product">
+                                                <strong>Sizes</strong>
+                                                <a href="#"><span>XS, </span></a>
+                                                <a href="#"><span>S, </span></a>
+                                                <a href="#"><span>M, </span></a>
+                                                <a href="#"><span>L, </span></a>
+                                                <a href="#"><span>XL, </span></a>
+                                                <a href="#"><span>XXL</span></a>
+                                            </div>
+                                            <div class="scolor-product">
+                                                <strong>Colors</strong>
+                                                <div class="colors">
+                                                    <div class="c-blue"><span></span></div>
+                                                    <div class="c-gray"><span></span></div>
+                                                    <div class="c-purple"><span></span></div>
+                                                    <div class="c-yellow"><span></span></div>
+                                                    <div class="c-red"><span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-back">
+                                <div class="shadow"></div>
+                                <div class="carousel carousel-v3">
+                                    <ul class="carousel-container">
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                        <li><img src="images/product/product.jpg" alt="product"></li>
+                                    </ul>
+                                    <div class="control-arrow">
+                                        <div class="arrowPrev">
+                                            <i class="fa fa-angle-right"></i>
+                                        </div>
+                                        <div class="arrowNext">
+                                            <i class="fa fa-angle-left"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-back">
+                                    <div class="cy"></div>
+                                    <div class="cx"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>*@

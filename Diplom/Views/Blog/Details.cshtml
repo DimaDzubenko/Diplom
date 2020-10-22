@@ -1,0 +1,236 @@
+﻿@model Diplom.Models.ViewModels.Blog.PostViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutSecond.cshtml";
+    ViewData["Title"] = "Post details";
+}
+<section id="main" class="site-main site-blog-single-v2">
+    <div class="engo-breadscrumb overlayo">
+        <div class="container">
+            <div class="row">
+                <ol class="breadcrumb ">
+                    <li class="home"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li>
+                        <a asp-controller="Blog" asp-action="Index"> Blog / News</a>
+                    </li>
+                    <li>Blog / News </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="main-content" class="main-content">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="site-blog-v2">
+                        <div @*class="banner-img img-bottom"*@>
+                            @if (ViewBag.Image != null)
+                            {
+                                <img src="data:image/jpeg;base64,@(Convert.ToBase64String(ViewBag.Image))" alt="blog" class="img-responsive center-block">
+                            }
+                            else
+                            {
+                                <img src="~images/blog/images/img-content-v2_03.jpg" alt="blog" class="img-responsive center-block">
+                            }
+                        </div>
+                        <article class="post">
+                            <div class="title-post">
+                                <h3 class="name"><span>@Model.Title</span></h3>
+                            </div>
+                            <ul class="post-meta">
+                                <li><a href="#"><i class="fa fa-clock-o"></i> @Model.Created</a></li>
+                                @*<li><a href="#"><i class="fa fa-comments-o"></i> 24 Comments</a></li>
+                                    <li><i class="fa fa-thumbs-o-up"></i> 256 Likes</li>*@
+                            </ul>
+                            <div class="post-info">
+                                <p>
+                                    @Model.Discription
+                                </p>
+                            </div>
+                            <div class="entry-footer">
+                                @*<div class="tags-links">
+                                        <strong>TAGS:</strong>
+                                        <a rel="tag" href="#">Wordpress, </a>
+                                        <a rel="tag" href="#">PSD, </a>
+                                        <a rel="tag" href="#">Design, </a>
+                                        <a rel="tag" href="#">Men Store, </a>
+                                        <a rel="tag" href="#">Summer.</a>
+                                    </div>*@
+                                <div class="single-share">
+                                    <strong>SHARE THIS:</strong>
+                                    <div class="social">
+                                        <ul>
+                                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+                                            <li><a href="#" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                            <li><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                @*<div class="author-info">
+                                        <img alt="" class="avatar" src="images/blog/avatar.jpg">
+                                        <div class="author-bio">
+                                            <h3>Administrator</h3>
+                                            <span class="job">Web Designer</span>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.</p>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </article>
+                        <!--<div class="comments-area" id="comments">
+                            <h3 class="comments-title widget-title">COMMENTS (04)</h3>
+                            <ol class="comment-list">
+                                <li class="comment">
+                                    <div class="comment-body">
+                                        <div class="comment-avatar">
+                                            <img class="avatar" src="images/blog/avatar.jpg" alt="">
+                                        </div>-->
+                        <!-- .comment-avatar -->
+                        <!--<header class="comment-meta">
+                            <div class="comment-author"><a class="url" rel="external nofollow" href="#"><span>Michael Vance</span></a></div>
+                            <div class="action-link">
+                                <span>03 Mins ago</span> /
+                                <a href="#" class="comment-repost">Repost</a> /
+                                <a href="#" class="comment-reply-link">Reply</a>
+                            </div>-->
+                        <!-- .action-link -->
+                        <!--</header>--><!-- .comment-meta -->
+                        <!--<div class="comment-content comment">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.</p>
+                        </div>-->
+                        <!-- .comment-content -->
+                        <!--</div>--><!-- .comment-body -->
+                        <!--<ol class="children">
+                            <li class="comment">
+                                <div class="comment-body">
+                                    <div class="comment-avatar">
+                                        <img class="avatar" src="images/blog/avatar.jpg" alt="">
+                                    </div>-->
+                        <!-- .comment-avatar -->
+                        <!--<header class="comment-meta">
+                            <cite class="comment-author"><a class="url" rel="external nofollow" href="#"><span>Rocky</span></a></cite>
+
+                            <div class="action-link">
+                                <span>03 Mins ago</span> /
+                                <a href="#" class="comment-repost">Repost</a> /
+                                <a href="#" class="comment-reply-link">Reply</a>
+                            </div>-->
+                        <!-- .action-link -->
+                        <!--</header>--><!-- .comment-meta -->
+                        <!--<div class="comment-content comment">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.</p>
+                        </div>-->
+                        <!-- .comment-content -->
+                        <!--</div>--><!-- .comment-body -->
+                        <!--</li>--><!-- .comment -->
+                        <!--<li class="comment">
+                            <div class="comment-body">
+                                <div class="comment-avatar">
+                                    <img class="avatar" src="images/blog/avatar.jpg" alt="">
+                                </div>-->
+                        <!-- .comment-avatar -->
+                        <!--<header class="comment-meta">
+                            <cite class="comment-author"><a class="url" rel="external nofollow" href="#"><span>Michael Vance</span></a></cite>
+                            <div class="action-link">
+                                <span>03 Mins ago</span> /
+                                <a href="#" class="comment-repost">Repost</a> /
+                                <a href="#" class="comment-reply-link">Reply</a>
+                            </div>-->
+                        <!-- .action-link -->
+                        <!--</header>--><!-- .comment-meta -->
+                        <!--<div class="comment-content comment">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.</p>
+                        </div>-->
+                        <!-- .comment-content -->
+                        <!--</div>--><!-- .comment-body -->
+                        <!--</li>--><!-- .comment -->
+                        <!--</ol>--><!-- .children -->
+                        <!--</li>--><!-- .comment -->
+                        <!--<li class="comment">
+                            <div class="comment-body">
+                                <div class="comment-avatar">
+                                    <img class="avatar" src="images/blog/avatar.jpg" alt="">
+                                </div>-->
+                        <!-- .comment-avatar -->
+                        <!--<header class="comment-meta">
+                            <cite class="comment-author"><a class="url" rel="external nofollow" href="#"><span>Philip</span></a></cite>
+
+                            <div class="action-link">
+                                <span>03 Mins ago</span> /
+                                <a href="#" class="comment-repost">Repost</a> /
+                                <a href="#" class="comment-reply-link">Reply</a>
+                            </div>-->
+                        <!-- .action-link -->
+                        <!--</header>--><!-- .comment-meta -->
+                        <!--<div class="comment-content comment">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.</p>
+                        </div>-->
+                        <!-- .comment-content -->
+                        <!--</div>--><!-- .comment-body -->
+                        <!--</li>--><!-- .comment -->
+                        <!--</ol>--><!-- .comment-list -->
+                        <!--<div class="comment-respond" id="respond">
+                            <h3 class="comment-reply-title widget-title" id="reply-title">LEAVE A COMMENT</h3>
+
+                            <form novalidate="" class="comment-form" id="commentform" method="post" action="#">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="comment-form-author">
+                                            <input size="30" value="" name="author" placeholder="Your name *" id="author" type="text">
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <p class="comment-form-email">
+                                            <input size="30" value="" name="email" placeholder="Your email *" id="email" type="text">
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <p class="comment-form-phone">
+                                            <input size="30" value="" name="phone" placeholder="Your phone *" id="phone" type="text">
+                                        </p>
+                                    </div>
+                                </div>-->
+                        <!-- .row -->
+                        <!--<p class="comment-form-comment">
+                                    <textarea aria-required="true" rows="5" cols="45" placeholder="Your message *" name="comment" id="comment"></textarea>
+                                </p>
+                                <p class="form-submit">
+                                    <button class="button-submit"><span class="send">Send message</span></button>
+                                </p>
+                            </form>
+                        </div>-->
+                        <!-- #respond -->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="sidebar" class="sidebar right-sidebar">
+                        @* Список тегов *@
+                        <!--<aside class="widget tags-cloud-widget">
+                            <h3 class="widget-title">Tags</h3>
+                            <div class="tags-cloud">
+                                <a href="#" style="font-size: 14px">Jacket</a>
+                                <a href="#" style="font-size: 24px; font-weight:bold">Men Store</a>
+                                <a href="#" style="font-size: 14px">Man</a>
+                                <a href="#" style="font-size: 20px; color: #888888">Fashion</a>
+                                <a href="#" style="font-size: 14px">Style</a>
+                                <a href="#" style="font-size: 18px">Jean</a>
+                                <a href="#" style="font-size: 14px">Footwear</a>
+                                <a href="#" style="font-size: 14px">T-Shirt</a>
+                                <a href="#" style="font-size: 12px">Shoes</a>
+                                <a href="#" style="font-size: 22px; color: #888888; font-weight:bold">Summer</a>
+                                <a href="#" style="font-size: 14px">Dress</a>
+                                <a href="#" style="font-size: 24px">Collection</a>
+                                <a href="#" style="font-size: 18px">Real Men</a>
+                            </div>--><!-- .tags-cloud -->
+                        <!--</aside>-->
+
+                    </div><!-- .right-sidebar -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
